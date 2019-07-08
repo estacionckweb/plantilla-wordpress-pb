@@ -252,9 +252,11 @@
     </div>
 </div>
 
+<!-- menu para el homepage -->
+
 <nav id="menu">
     <div class="item">Convocatorias</div>
-    <div class="item">Laboratorio</div>
+    <div class="item">Laboratorios</div>
     <div class="item">Resultados</div>
     <div class="item">Noticias</div>
     <div class="item">Talleres</div>
