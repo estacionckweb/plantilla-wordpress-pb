@@ -31,6 +31,7 @@ html {
 }
 body {
 	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Inconsolata', monospace;
 	color:#444;
 	background: black;
 }
@@ -95,6 +96,32 @@ input:focus {
 	margin-left: 2.5%;
 	width: 95% !important;
 	height: auto !important;
+}
+
+
+/* MENU */
+
+#menu {
+	display: grid;
+	color: white;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 2.5%;
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 1.25em;
+	margin-top: 10vh;
+}
+
+#menu .item {
+	border: 1px solid white;
+	padding: 0.5em;
+	text-align: center;
+}
+
+#menu .item:hover {
+	background: white;
+	color: black;
+	cursor: pointer;
 }
 
 /*------------------------------------*\

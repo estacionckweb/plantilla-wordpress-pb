@@ -53,11 +53,13 @@
 		// Linea del tiempo para la animación al inicio
 		var tl_inicio = new TimelineMax();
 
-		tl_inicio.add('start', '+=0.5')
-		.staggerFromTo('#TITULO g', 0.25, {autoAlpha: 0}, {autoAlpha: 1}, 0.15, '+=0.5')
+		tl_inicio.add('start', '+=0.25')
+		.staggerFromTo('#TITULO g', 0.25, {autoAlpha: 0}, {autoAlpha: 1}, 0.15, '+=0.25')
 		.fromTo('#LINEA', 0.5, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.25')
 		.fromTo('#BOGOTA', 2, {autoAlpha: 0}, {autoAlpha: 1})
-		.fromTo('#p5_canvas', 4, {autoAlpha: 0}, {autoAlpha: 1}, 'start');
+		.staggerFromTo('#menu .item', 0.25, {autoAlpha: 0, y: 10}, {autoAlpha: 1, y: 0}, 0.15, 'start')
+		.fromTo('#p5_canvas', 4, {autoAlpha: 0}, {autoAlpha: 1}, 'start')
+		;
 		
 	});
 	
