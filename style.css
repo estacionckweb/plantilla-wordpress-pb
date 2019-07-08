@@ -32,6 +32,7 @@ html {
 body {
 	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color:#444;
+	background: black;
 }
 /* clear */
 .clear:before,
@@ -67,6 +68,33 @@ a:active {
 input:focus {
 	outline:0;
 	border:1px solid #04A4CC;
+}
+
+/* color de los poligonos en el home */
+.st0 {
+	fill:white;
+}
+
+#logo {
+	max-width: 800px;
+	display: flex;
+	margin: 0 auto;
+	margin-top:10vh;
+}
+
+#logo .letras {
+	width: 50%;
+}
+
+#p5_canvas {
+	width: 50%;
+}
+
+#p5_canvas canvas {
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	width: 95% !important;
+	height: auto !important;
 }
 
 /*------------------------------------*\
