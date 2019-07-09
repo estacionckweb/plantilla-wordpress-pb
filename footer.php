@@ -3,6 +3,17 @@
 		</div>
 		<!-- /wrapper -->
 
+		<footer class="footer">
+			<div class="copy">
+				Plataforma Bogotá.<br>
+				Laboratorio Interactivo de Arte, Ciencia y Tecnología<br>
+				Dirección: Calle 10 No. 4 - 28 <br>
+				Colombia - Bogotá, D.C.<br>
+				Teléfono: +57(1) 3 79 57 50 ext 1008<br>
+				<a href="mailto:contactenos@idartes.gov.co">contactenos@idartes.gov.co</a>
+			</div>
+		</footer>
+
 		<?php wp_footer(); ?>
 
 		<!-- analytics -->

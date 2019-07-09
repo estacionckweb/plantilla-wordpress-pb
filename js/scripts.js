@@ -58,7 +58,7 @@
 		.fromTo('#LINEA', 0.5, {autoAlpha: 0}, {autoAlpha: 1}, '-=0.25')
 		.fromTo('#BOGOTA', 2, {autoAlpha: 0}, {autoAlpha: 1})
 		.staggerFromTo('#menu .item', 0.25, {autoAlpha: 0, y: 10}, {autoAlpha: 1, y: 0}, 0.15, 'start')
-		.fromTo('#p5_canvas', 4, {autoAlpha: 0}, {autoAlpha: 1}, 'start')
+		.fromTo('#p5_canvas', 0.25, {autoAlpha: 0}, {autoAlpha: 1}, 'start')
 		;
 		
 	});

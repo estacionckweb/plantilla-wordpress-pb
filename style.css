@@ -32,6 +32,7 @@ html {
 body {
 	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-family: 'Inconsolata', monospace;
+	font-family: 'Roboto', sans-serif;
 	color:#444;
 	background: black;
 }
@@ -108,7 +109,7 @@ input:focus {
 	grid-gap: 2.5%;
 	max-width: 800px;
 	margin: 0 auto;
-	font-size: 1.25em;
+	font-size: 1.5em;
 	margin-top: 10vh;
 }
 
@@ -116,12 +117,125 @@ input:focus {
 	border: 1px solid white;
 	padding: 0.5em;
 	text-align: center;
+	position: relative;
+	text-transform: lowercase;
 }
+
+/* #menu .item:hover:before {
+    width: 40px;
+    height: 20px;
+    content: '';
+    background: black;
+    position: absolute;
+    left: -15px;
+    top: -20px;
+    transform: rotate(-45deg);
+} */
 
 #menu .item:hover {
 	background: white;
 	color: black;
 	cursor: pointer;
+}
+
+/* CONTENIDO DEL HOME */
+
+.contenido {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.5em;
+    margin-top: 10vh;
+    background: white;
+    color: black;
+    padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom: 2em;
+	position: relative;
+	height: 300px;
+	overflow: hidden;
+}
+
+.contenido:before {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    background: black;
+    top: -50px;
+    left: -50px;
+    content: '';
+    transform: rotate(45deg);
+}
+
+.contenido:after {
+	position: absolute;
+	width: 100%;
+	height: 70px;
+	content: '';
+	left: 0;
+	bottom: 0;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 65%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 65%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 65%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.contenido h2 {
+    font-weight: normal;
+    position: relative;
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 0;
+    margin-top: 2.5vh;
+}
+
+.contenido h2:after {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: white;
+    right: -25px;
+    content: '';
+	bottom: 7px;
+	opacity: 0;
+}
+
+.contenido p strong {
+    font-weight: normal;
+    background: black;
+    color: white;
+}
+
+/* ULTIMOS ELEMENTOS DEL HOME */
+
+.elementos {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.elementos .item {
+	min-height: 200px;
+}
+
+/* PIE DE PAGINA */
+
+.footer {
+	display: flex;
+	color: white;
+	margin: 0 auto;
+	margin-top: 10vh;
+	padding-bottom: 5vh;
+	font-size: 1.25em;
+	max-width: 800px;
+}
+
+.footer .copy a {
+	color: white;
+	border-bottom: 1px dashed;
+}
+
+.footer .copy a:hover {
+	color: black;
+	background: white;
 }
 
 /*------------------------------------*\
@@ -360,3 +474,116 @@ a img.aligncenter {
 		page-break-after:avoid;
 	}
 }
+
+
+/* ANIMACIONES */
+
+/* animacion para los titulos */
+
+.contenido h2:hover:after{
+	animation: animationFrames linear 1s;
+	animation-iteration-count: infinite;
+	transform-origin: 50% 50%;
+	-webkit-animation: animationFrames linear 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-transform-origin: 50% 50%;
+	-moz-animation: animationFrames linear 1s;
+	-moz-animation-iteration-count: infinite;
+	-moz-transform-origin: 50% 50%;
+	-o-animation: animationFrames linear 1s;
+	-o-animation-iteration-count: infinite;
+	-o-transform-origin: 50% 50%;
+	-ms-animation: animationFrames linear 1s;
+	-ms-animation-iteration-count: infinite;
+	-ms-transform-origin: 50% 50%;
+  }
+  
+  @keyframes animationFrames{
+	0% {
+	  opacity:1;
+	}
+	10% {
+	  opacity:0;
+	}
+	50% {
+	  opacity:0;
+	}
+	60% {
+	  opacity:1;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-moz-keyframes animationFrames{
+	0% {
+	  opacity:1;
+	}
+	11% {
+	  opacity:0;
+	}
+	51% {
+	  opacity:0;
+	}
+	61% {
+	  opacity:1;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-webkit-keyframes animationFrames {
+	0% {
+	  opacity:1;
+	}
+	11% {
+	  opacity:0;
+	}
+	51% {
+	  opacity:0;
+	}
+	61% {
+	  opacity:1;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-o-keyframes animationFrames {
+	0% {
+	  opacity:1;
+	}
+	10% {
+	  opacity:0;
+	}
+	50% {
+	  opacity:0;
+	}
+	60% {
+	  opacity:1;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-ms-keyframes animationFrames {
+	0% {
+	  opacity:1;
+	}
+	10% {
+	  opacity:0;
+	}
+	50% {
+	  opacity:0;
+	}
+	60% {
+	  opacity:1;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
