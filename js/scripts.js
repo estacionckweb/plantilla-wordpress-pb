@@ -48,7 +48,8 @@
 			}
 		}
 
-		var logo = new p5(scketch, 'p5_canvas');
+		if($('body').hasClass('home'))
+			var logo = new p5(scketch, 'p5_canvas');
 		
 		// Linea del tiempo para la animación al inicio
 		var tl_inicio = new TimelineMax();

@@ -210,10 +210,24 @@ input:focus {
 .elementos {
 	max-width: 800px;
 	margin: 0 auto;
+	margin-top: 10vh;
 }
 
 .elementos .item {
 	min-height: 200px;
+	position: relative;
+}
+
+.elementos .item:before {
+	position: absolute;
+	background: white;
+	width: 80px;
+	height: 5px;
+	content: '';
+	transform: rotate(-45deg);
+	top: 65px;
+	transform-origin: 0%;
+	transition: all 0.2s ease;
 }
 
 /* PIE DE PAGINA */
@@ -236,6 +250,59 @@ input:focus {
 .footer .copy a:hover {
 	color: black;
 	background: white;
+}
+
+/* CALENDARIO */
+
+.calendario_container {
+	display: flex;
+}
+.calendario_container .listado {
+	width: 40%;
+}
+#calendario {
+	width: 60%;
+    color: white;
+    font-size: 2em;
+    display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(2, 50px) repeat(5, 100px);
+	grid-gap: 5px;
+}
+
+#calendario .item {
+	border: 1px solid white;
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+}
+
+#calendario .item.dia_nom {
+	text-transform: lowercase;
+	font-size: 0.75em;
+}
+
+#calendario .item.hoy {
+	position: relative;
+}
+
+#calendario .item.nombre {
+	grid-column: 2/7;
+}
+
+#calendario .item.hoy:before {
+	position: absolute;
+	width: 100%;
+	height: 10px;
+	top: 0;
+	left: 0;
+	background: #e04747;
+	content: '';
+}
+
+#calendario .item.vacio {
+	border-color: #555;
+	background: #222;
 }
 
 /*------------------------------------*\
