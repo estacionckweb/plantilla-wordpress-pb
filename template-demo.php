@@ -30,7 +30,7 @@
 		<div class="calendario_container">
 			<div id="calendario">
 				<div class="item nav"></div>
-				<div class="item nombre"></div>
+				<div class="item nombre"><?php echo $mes_nombre ?></div>
 				<div class="item nav"></div>
 				<div class="item dia_nom">
 					<div class="inside">Dom</div>

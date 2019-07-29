@@ -19,5 +19,11 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+		<?php if(!is_front_page()): ?>
+		<div id="top_nav">
+			<div class="logo"></div>
+		</div>
+		<?php endif; ?>
+
 		<!-- wrapper -->
 		<div class="wrapper">

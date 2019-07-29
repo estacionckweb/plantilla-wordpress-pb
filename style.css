@@ -239,7 +239,8 @@ input:focus {
 	margin-top: 10vh;
 	padding-bottom: 5vh;
 	font-size: 1.25em;
-	max-width: 800px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .footer .copy a {
@@ -288,13 +289,21 @@ input:focus {
 
 #calendario .item.nombre {
 	grid-column: 2/7;
+	font-size: 0.75em;
+	justify-content: center;
+	position: relative;
+}
+
+#calendario .item.nombre,
+#calendario .item.nav {
+	border: none;
 }
 
 #calendario .item.hoy:before {
 	position: absolute;
 	width: 100%;
 	height: 10px;
-	top: 0;
+	top: 15px;
 	left: 0;
 	background: #e04747;
 	content: '';
@@ -305,16 +314,33 @@ input:focus {
 	background: #222;
 }
 
+/* TOP NAV */
+
+#top_nav {
+	height: 75px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid white;
+}
+
+#top_nav .logo {
+	background-image: url('./img/logo_completo.svg');
+	background-position: center;
+	background-size: contain;
+	height: 75px;
+    width: 150px;
+    background-repeat: no-repeat;
+}
+
 /*------------------------------------*\
     STRUCTURE
 \*------------------------------------*/
 
 /* wrapper */
 .wrapper {
-	max-width:1280px;
-	width:95%;
 	margin:0 auto;
 	position:relative;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 /* header */
 .header {
