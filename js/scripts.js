@@ -61,7 +61,29 @@
 		.staggerFromTo('#menu .item', 0.25, {autoAlpha: 0, y: 10}, {autoAlpha: 1, y: 0}, 0.15, 'start')
 		.fromTo('#p5_canvas', 0.25, {autoAlpha: 0}, {autoAlpha: 1}, 'start')
 		;
-		
+
+		$('#calendario .mes .nav').on('click', function(){
+			$mes_nuevo = $('#calendario .mes.hide');
+			$('#calendario .mes').addClass('hide');
+			$mes_nuevo.removeClass('hide');
+		});
+
+		$('.calendario_container .listado .item').on('click', function(){
+			$item = $(this);
+			$old_height = $item.height();
+			$item.find('.inside').show();
+
+			$new_height = $item.height();
+			$item.find('.inside').hide();
+
+			var tl_temp = new TimelineMax();
+			tl_temp.add('start')
+			.to($item, 0.25, {css: {'height': $new_height + 'px'}})
+			.add(function() {
+				$item.find('.inside').fadeIn();
+			})
+		});
+
 	});
 	
 })(jQuery, this);

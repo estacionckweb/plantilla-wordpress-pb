@@ -446,4 +446,95 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+
+/**
+* Register Custom Post Types and Custom taxonomies.
+*
+* from Custom Post Type Generator Plugins.
+*/
+
+add_action( 'init', 'cptg_custom_post_types' );
+function cptg_custom_post_types()
+{
+	$labels = array(
+		'name' => 'agenda',
+		'singular_name' => 'Agenda',
+		'menu_name' => 'Agenda',
+		'name_admin_bar' => 'Agenda',
+		'all_items' => 'All Posts',
+		'add_new' => 'Add New',
+		'add_new_item' => 'Add New Post',
+		'edit_item' => 'Edit Post',
+		'new_item' => 'New Post',
+		'view_item' => 'View Post',
+		'search_items' => 'Search Posts',
+		'not_found' =>  'No posts found.',
+		'not_found_in_trash' => 'No posts found in Trash.',
+		'parent_item_colon' => 'Parent Page',
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => false,
+		'exclude_from_search' => false,
+		'publicly_queryable' => false,
+		'show_ui' => true,
+		'show_in_nav_menus' => true,
+		'show_in_menu' => true,
+		'show_in_admin_bar' => true,
+		'has_archive' => true,
+		'menu_position' => null,
+		'menu_icon' => null,
+		'hierarchical' => false,
+		'register_meta_box_cb' => '',
+		'rewrite' => array( 'slug' => 'agenda','with_front' => true,'feeds' => false,'pages' => true ),
+		'query_var' => true,
+		'can_export' => true,
+		'show_in_rest' => false,
+		'supports' => array( 'title','editor' ),
+	);
+	register_post_type( 'agenda', $args );
+	$labels = array(
+		'name' => 'tipos_agenda',
+		'singular_name' => 'Tipos',
+		'menu_name' => 'Tipos',
+		'all_items' => 'All Tags',
+		'edit_item' => 'Edit Tag',
+		'view_item' => 'View Tag',
+		'update_item' => 'Update Tag',
+		'add_new_item' => 'Add New Tag',
+		'new_item_name' => 'New Tag Name',
+		'parent_item' => 'Parent Category',
+		'parent_item_colon' =>  'Parent Category',
+		'search_items' => 'Search Tags',
+		'popular_items' => 'Popular Tags',
+		'separate_items_with_commas' => 'Separate tags with commas',
+		'add_or_remove_items' => 'Add or remove tags',
+		'choose_from_most_used' => 'Choose from the most used tags',
+		'not_found' => 'No tags found.',
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'show_ui' => true,
+		'show_in_nav_menus' => true,
+		'show_in_rest' => false,
+		'show_tagcloud' => true,
+		'meta_box_cb' => null,
+		'show_admin_column' => false,
+		'hierarchical' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'tipos_agenda','with_front' => true,'hierarchical' => false, ),
+		'sort' => false,
+	);
+	register_taxonomy( 'tipos_agenda', array( 'agenda' ) , $args );
+}
+
+add_action( 'after_switch_theme', 'cptg_rewrite_flush' );
+function cptg_rewrite_flush()
+{
+	flush_rewrite_rules();
+}
+
+include( get_theme_file_path("/includes/functions_calendar.php") );
+
 ?>

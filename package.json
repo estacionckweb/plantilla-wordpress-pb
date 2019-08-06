@@ -1,0 +1,17 @@
+{
+  "name": "plantilla-wp-plataforma",
+  "version": "0.1",
+  "description": "Plantilla wordpress para la página de Plataforma Bogotá",
+  "main": "index.js",
+  "repository": "https://github.com/estacionckweb/plantilla-wordpress-pb.git",
+  "author": "Néstor Andrés <nestor2509@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "css": "node-sass --output-style --include-path scss assets/css/source.scss style.css",
+    "watch": "nodemon -e scss -x \"npm run css\""
+  }
+}

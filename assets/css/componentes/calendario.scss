@@ -263,18 +263,12 @@ input:focus {
 }
 #calendario {
 	width: 60%;
-}
-#calendario .mes {
     color: white;
     font-size: 2em;
     display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	grid-template-rows: repeat(2, 50px) repeat(5, 100px);
 	grid-gap: 5px;
-}
-
-#calendario .mes.hide {
-	display: none;
 }
 
 #calendario .item {
@@ -305,11 +299,6 @@ input:focus {
 	border: none;
 }
 
-#calendario .item.nav:not(.hide) {
-	background: white;
-	cursor: pointer;
-}
-
 #calendario .item.hoy:before {
 	position: absolute;
 	width: 100%;
@@ -323,120 +312,6 @@ input:focus {
 #calendario .item.vacio {
 	border-color: #555;
 	background: #222;
-}
-
-/* LISTADO CALENDARIO */
-
-.calendario_container .listado {
-	padding-top: 55px;
-	padding-left: 15px;
-}
-
-.calendario_container .listado .item { 
-	color: white;
-	font-size: 1.5em;
-	min-height: 50px;
-	border-top: 1px dashed #333;
-	margin-bottom: 2.5px;
-	cursor: pointer;
-}
-
-.calendario_container .listado .item .top {
-	display: flex;
-	align-items: center;
-	min-height: 50px;
-	padding: 5px;
-}
-
-.calendario_container .listado .item .inside {
-	display: none;
-}
-
-.calendario_container .listado .item .inside .content {
-	display: flex;
-	margin-left: 5px;
-	margin-top: 20px;
-	padding-bottom: 10px;
-}
-
-.calendario_container .listado .item .inside .content .img {
-	width: 100px;
-	height: 100px;
-	background: #999;
-}
-
-.calendario_container .listado .item .inside .content .txt {
-	margin-left: 10px;
-	max-width: 350px;
-	width: calc(100% - 100px);
-}
-
-.calendario_container .listado .item .inside .content .img {
-}
-
-.calendario_container .listado .item:last-child {
-	border-bottom: 1px dashed #333;
-}
-
-.calendario_container .listado .item .categ {
-	width: 20px;
-	height: 20px;
-	border-radius: 30px;
-	border:3px solid white;
-	margin-right: 10px;
-}
-
-.calendario_container .listado .item .categ_name, .calendario_container .listado .item .link {
-	font-family: 'Inconsolata', monospace;
-	background: white;
-	color: black;
-	text-transform: lowercase;
-	display: inline-block;
-	margin-left: 5px;
-	padding: 3px;
-	padding-left: 10px;
-	padding-right: 10px;
-	font-size: 0.85em;
-}
-
-.calendario_container .listado .item .link {
-	background: transparent;
-	color: white;
-	border: 1px solid;
-}
-
-.calendario_container .listado .item .link:hover {
-	background: white;
-	color: #333;
-}
-
-.calendario_container .listado .item .categ.convocatorias {
-	border-color: #d66bd8;
-}
-
-.calendario_container .listado .item .categ.laboratorio {
-	border-color: #f1e340;
-}
-
-
-.calendario_container .listado .item .categ_name.convocatorias {
-	background: #d66bd8;
-}
-
-.calendario_container .listado .item .categ_name.laboratorio {
-	background: #f1e340;
-}
-
-.calendario_container .listado .item .fecha {
-	font-family: 'Inconsolata', monospace;
-	border: 1px solid;
-	padding: 3px;
-	font-size: 0.85em;
-	border-radius: 3px;
-	margin-left: 15px;
-	color: #777;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 
 /* TOP NAV */
