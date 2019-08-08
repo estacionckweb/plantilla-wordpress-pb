@@ -225,23 +225,23 @@ input:focus {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 10vh;
-}
 
-.elementos .item {
-    min-height: 200px;
-    position: relative;
-}
+    .item {
+        min-height: 200px;
+        position: relative;
 
-.elementos .item:before {
-    position: absolute;
-    background: white;
-    width: 80px;
-    height: 5px;
-    content: '';
-    transform: rotate(-45deg);
-    top: 65px;
-    transform-origin: 0%;
-    transition: all 0.2s ease;
+        &:before {
+            position: absolute;
+            background: white;
+            width: 80px;
+            height: 5px;
+            content: '';
+            transform: rotate(-45deg);
+            top: 65px;
+            transform-origin: 0%;
+            transition: all 0.2s ease;
+        }
+    }
 }
 
 /* PIE DE PAGINA */
@@ -255,16 +255,16 @@ input:focus {
     font-size: 1.25em;
     padding-left: 15px;
     padding-right: 15px;
-}
 
-.footer .copy a {
-    color: white;
-    border-bottom: 1px dashed;
-}
+    .copy a {
+        color: white;
+        border-bottom: 1px dashed;
 
-.footer .copy a:hover {
-    color: black;
-    background: white;
+        &:hover {
+            color: black;
+            background: white;
+        }
+    }
 }
 
 /* CALENDARIO */
@@ -488,15 +488,15 @@ input:focus {
     height: 75px;
     margin-bottom: 25px;
     border-bottom: 1px solid white;
-}
 
-#top_nav .logo {
-    background-image: url('./img/logo_completo.svg');
-    background-position: center;
-    background-size: contain;
-    height: 75px;
-    width: 150px;
-    background-repeat: no-repeat;
+    .logo {
+        background-image: url('./img/logo_completo.svg');
+        background-position: center;
+        background-size: contain;
+        height: 75px;
+        width: 150px;
+        background-repeat: no-repeat;
+    }
 }
 
 /*------------------------------------*\
