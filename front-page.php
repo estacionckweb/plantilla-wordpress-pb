@@ -272,13 +272,7 @@
 
 <!-- Cargar el contenido del content que se administra desde la página Página Principal -->
 <!-- Para que sirva toca configurar en lectura esa pagina principal como el homepage -->
-<div class="contenido">
-    <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-    <?php the_content() ?>
-
-    <?php endwhile; endif; ?>
-</div>
 
 
 <?php get_footer(); ?>

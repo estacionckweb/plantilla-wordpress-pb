@@ -20,7 +20,7 @@
         $today++;
     endwhile;
 ?>
-<div class="mes mes_<?php echo $mes_num ?>">
+<div class="mes mes_<?php echo zerofill($mes_num, 2) ?>">
     <div class="item nav hide"></div>
     <div class="item nombre"><?php echo $mes_nombre ?></div>
     <div class="item nav next"></div>
@@ -61,7 +61,7 @@
                 $class = '';
                 if($dia == $dia_num) $class = 'hoy';
             ?>
-            <div class="item dia_<?php echo $dia ?> <?php echo $class ?>"><?php echo $dia ?></div>
+            <div class="item dia_<?php echo zerofill($dia, 2) ?> <?php echo $class ?>"><?php echo $dia ?></div>
             
             <?php
                 $wday++;
@@ -141,7 +141,7 @@ endwhile;
                 <div class="item vacio"></div>
             <?php endfor; $primera_semana = false; endif; ?>
 
-        <div class="item dia_<?php echo $dia ?>"><?php echo $dia ?></div>
+        <div class="item dia_<?php echo zerofill($dia, 2) ?>"><?php echo $dia ?></div>
         
         <?php
             $wday++;

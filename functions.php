@@ -474,9 +474,9 @@ function cptg_custom_post_types()
 	);
 	$args = array(
 		'labels' => $labels,
-		'public' => false,
+		'public' => true,
 		'exclude_from_search' => false,
-		'publicly_queryable' => false,
+		'publicly_queryable' => true,
 		'show_ui' => true,
 		'show_in_nav_menus' => true,
 		'show_in_menu' => true,
