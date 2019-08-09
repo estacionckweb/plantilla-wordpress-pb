@@ -30,6 +30,8 @@
 					$todo_el_dia = get_field('todo_el_dia');
 					$cierre = get_field('fecha_cierre');
 
+					$galeria = get_field('galeria');
+
 					if($todo_el_dia == 1) $cierre = '';
 
 					$categ = get_the_terms(get_the_ID(), 'tipos_agenda');
@@ -56,7 +58,9 @@
 							<a href="<?php echo get_permalink() ?>" class="link">Saber más</a>
 
 							<div class="content">
-								<div class="img"></div>
+								<div class="img">
+									<img src="<?php echo $galeria[0]['sizes']['thumbnail'] ?>" alt="">
+								</div>
 								<div class="txt"><?php echo get_field('breve_descripcion'); ?></div>
 							</div>
 						</div>
