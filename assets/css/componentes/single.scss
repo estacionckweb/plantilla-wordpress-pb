@@ -1,0 +1,64 @@
+article.single {
+    display: flex;
+    width: 100%;
+
+    .left {
+        width: 50%;
+
+        .img {
+            margin-bottom: 20px;
+        }
+    }
+
+    .right {
+        width: 50%;
+        color: white;
+        padding-left: 20px; 
+        padding-right: 20px;
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .categ_name {
+            &.convocatorias {
+                background: #d66bd8;
+            }
+
+            &.laboratorio {
+                background: #f1e340;
+            }
+        }
+
+        .categ_name, .fecha {
+            font-family: 'Inconsolata', monospace;
+            background: white;
+            color: black;
+            text-transform: lowercase;
+            display: inline-block;
+            margin-right: 5px;
+            padding: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 1.25em;
+        }
+
+        .content {
+            font-size: 1.5em;
+            
+            p {
+                max-width: 500px;
+            }
+        }
+    }
+
+    @media all and (max-width: 900px) {
+        flex-wrap: wrap;
+        flex-flow: column-reverse;
+
+        .left, .right {
+            width: 100%;
+            padding: 0;
+        }
+    }
+}

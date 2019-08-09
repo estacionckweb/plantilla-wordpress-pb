@@ -14,7 +14,9 @@
 
 			</div>
 			<div class="listado">
-				
+					<a class="itemArchive">
+						Ver archivo de la agenda
+					</a>
 				<?php
 					global $query_string;
 					$args = array(
@@ -32,6 +34,8 @@
 
 					$categ = get_the_terms(get_the_ID(), 'tipos_agenda');
 				?>
+
+					
 
 					<div class="item" data-inicio="<?php echo $inicio ?>" data-cierre="<?php echo $cierre ?>">
 						<div class="top">
