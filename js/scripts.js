@@ -210,5 +210,18 @@
         }
       }
     }
+
+    $('.single .left .size').on('click', function(){
+      if(!$('.single .left').hasClass('wide')) {
+        $('.single .right').fadeOut(function(){
+          $('.single .left').addClass('wide');
+        });
+      } else {
+        $('.single .left').removeClass('wide');
+        setTimeout(function(){
+          $('.single .right').fadeIn();
+        }, 500);
+      }
+    });
   });
 })(jQuery, this);

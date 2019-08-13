@@ -14,7 +14,7 @@
 
 			</div>
 			<div class="listado">
-					<a class="itemArchive">
+					<a class="itemArchive" href="<?php echo get_post_type_archive_link('agenda') ?>">
 						Ver archivo de la agenda
 					</a>
 				<?php

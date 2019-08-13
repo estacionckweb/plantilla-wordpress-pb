@@ -19,6 +19,7 @@
 					if($galeria): foreach($galeria as $img):
 				?>
 					<div class="img">
+						<div class="size"></div>
 						<img src="<?php echo $img['url'] ?>" alt="">
 					</div>
 				<?php endforeach; endif; ?>
@@ -39,8 +40,17 @@
 					</div>
 				</div>
 
+				<div class="external_nav top_margin">
+					<a href="" class="link">Ir al calendario</a>
+					<a href="<?php echo get_post_type_archive_link(get_post_type()) ?>" class="link">Ir al archivo</a>
+				</div>
+
 				<div class="content">
 					<?php the_content() ?>
+				</div>
+
+				<div class="external_nav btm_margin">
+					<div class="link related">Relacionados</div>
 				</div>
 			</div>
 		</article>

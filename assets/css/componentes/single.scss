@@ -4,9 +4,64 @@ article.single {
 
     .left {
         width: 50%;
+        transition: all 0.5s ease;
 
         .img {
             margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+
+            .size {
+                position: absolute;
+                width: 40px;
+                height: 80px;
+                top: -30px;
+                right: -10px;
+                background: rgba(23, 23, 23, 0.6);
+                transform: rotate(-45deg);
+                cursor: pointer;
+                display: none;
+                transition: all 0.25s ease;
+
+                &:before {
+                    content: '\E802';
+                    font-family: 'icons';
+                    color: white;
+                    width: 100%;
+                    text-align: center;
+                    position: absolute;
+                    top: 50%;
+                    font-size: 2em;
+                    transform: translate(0, -50%);
+                }
+
+                &:hover {
+                    background: rgba(23, 23, 23, 1);
+                }
+            }
+
+            @media all and (min-width: 900px) {
+                &:hover {
+                    .size {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &.wide {
+            width: 90%;
+
+            .img {
+                .size {
+                    display: block;
+
+                    &:before {
+                        content: '\E803';
+                        text-indent: -10px;
+                    }
+                }
+            }
         }
     }
 
@@ -50,6 +105,8 @@ article.single {
                 max-width: 500px;
             }
         }
+
+        
     }
 
     @media all and (max-width: 900px) {

@@ -21,7 +21,7 @@
 
 		<?php if(!is_front_page()): ?>
 		<div id="top_nav">
-			<div class="logo"></div>
+			<a href="<?php echo get_blogInfo('url') ?>" class="logo"></a>
 		</div>
 		<?php endif; ?>
 

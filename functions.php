@@ -537,4 +537,8 @@ function cptg_rewrite_flush()
 
 include( get_theme_file_path("/includes/functions_calendar.php") );
 
+function get_archive_post_type() {
+    return is_archive() ? get_queried_object()->name : false;
+}
+
 ?>

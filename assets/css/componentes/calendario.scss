@@ -217,6 +217,32 @@
         }
     }
 
+    .itemArchive {
+        text-transform: uppercase;
+        color: white;
+        position: relative;
+        font-family: 'Inconsolata', monospace;
+        display: inline-block;
+        padding: 5px;
+        font-size: 1.25em;
+        padding-right: 50px;
+        cursor: pointer;
+
+        &:before {
+            content: '\E802';
+            font-family: 'icons';
+            right: 30px;
+            position: absolute;
+            transition: all 0.25s ease;
+        }
+
+        &:hover {
+            &:before {
+                right: 20px;
+            }
+        }
+    }
+
     @media all and (max-width: 900px) {
         flex-wrap: wrap;
 
