@@ -41,15 +41,20 @@
 
 					<div class="item" data-inicio="<?php echo $inicio ?>" data-cierre="<?php echo $cierre ?>">
 						<div class="top">
-							<div class="categ <?php echo $categ[0]->slug ?>"></div>
+							<?php if($categ): foreach($categ as $item): ?>
+							<?php
+								$color = get_field('color', $item);
+							?>
+								<div class="categ <?php echo $item->slug ?>" style="border-color: <?php echo $color ?>"></div>
+							<?php endforeach; endif; ?>
 							<div class="nombre"><?php the_title() ?></div>
-							<div class="fecha">
+							<!-- <div class="fecha">
 								<?php if($todo_el_dia == 1): ?>
 									<?php echo $inicio ?>
 								<?php else: ?>
 									<?php echo $inicio ?> a <?php echo $cierre ?>
 								<?php endif; ?>
-							</div>
+							</div> -->
 						</div>
 						<div class="inside">
 							<div class="categ_name <?php echo $categ[0]->slug ?>">

@@ -45,6 +45,12 @@
 					<a href="<?php echo get_post_type_archive_link(get_post_type()) ?>" class="link">Ir al archivo</a>
 				</div>
 
+				<div class="nav">
+					<a href="#" class="item">Invitación pública</a>
+					<a href="#" class="item">Resolución</a>
+					<a href="#" class="item">Inscripción</a>
+				</div>
+
 				<div class="content">
 					<?php the_content() ?>
 				</div>

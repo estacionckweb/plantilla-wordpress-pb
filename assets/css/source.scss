@@ -338,13 +338,23 @@ input:focus {
         }
 
         &.categ {
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
             &:before {
                 content: '';
+            }
+
+            .dot {
                 width: 7px;
                 height: 7px;
+                border-radius: 20px;
                 background: white;
-                top: 50%;
-                transform: translate(0, -50%);
+                display: inline-block;
+                margin-left: 10px;
+                border: 1px solid black;
             }
         }
     }
