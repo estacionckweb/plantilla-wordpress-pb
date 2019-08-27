@@ -240,6 +240,29 @@
       }
     });
 
+    bindRestNav();
+
+    function bindRestNav() {
+      $('.archive .moreRest').on('click', (e) => {
+        e.preventDefault();
+        var $item = $(this);
+        var page = $item.attr('data-page');
+        var url = $item.attr('href');
+
+        var finalUrl = url + page;
+
+        $item.addClass('active');
+
+        console.log(url);
+
+        $.getJSON(finalUrl, (data) => {
+          $item.remove();
+          console.log(data);
+        })
+      });
+    }
+    
+
 
   });
 })(jQuery, this);
