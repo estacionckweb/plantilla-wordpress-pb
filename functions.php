@@ -541,4 +541,55 @@ function get_archive_post_type() {
     return is_archive() ? get_queried_object()->name : false;
 }
 
+function rest_fields_register_acf() {
+    register_rest_field( 'agenda',
+        'tipos_name',
+        array(
+            'get_callback'    => 'wpse_287931_get_tipos_names',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+
+    register_rest_field( 'agenda',
+        'tipos_color',
+        array(
+            'get_callback'    => 'wpse_287931_get_tipos_rgb',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+}
+
+add_action( 'rest_api_init', 'rest_fields_register_acf' );
+    
+function wpse_287931_get_tipos_rgb( $object, $field_name, $request ) {
+
+    $formatted_categories = array();
+
+    $categories = wp_get_post_terms( $object['id'] , 'tipos_agenda');
+
+    foreach ($categories as $category) {
+        $term_color = get_field('color', $category);
+        // list($r, $g, $b) = sscanf($term_color, "#%02x%02x%02x");
+        // $formatted_categories[] = 'rgb(' . $r . ',' . $g . ',' . $b . ')';
+        $formatted_categories[] = $term_color;
+    }
+
+    return $formatted_categories;
+}
+
+function wpse_287931_get_tipos_names( $object, $field_name, $request ) {
+
+    $formatted_categories = array();
+
+    $categories = wp_get_post_terms( $object['id'] , 'tipos_agenda');
+
+    foreach ($categories as $category) {
+        $formatted_categories[] = $category->name;
+    }
+
+    return $formatted_categories;
+}
+
 ?>

@@ -243,7 +243,7 @@
     bindRestNav();
 
     function bindRestNav() {
-      $('.archive .moreRest').on('click', (e) => {
+      $('.archive .moreRest').on('click', function(e){
         e.preventDefault();
         var $item = $(this);
         var page = $item.attr('data-page');
@@ -253,14 +253,51 @@
 
         $item.addClass('active');
 
-        console.log(url);
 
         $.getJSON(finalUrl, (data) => {
+          // console.log(data);
           $item.remove();
-          console.log(data);
+          for (var i = 0; i < data.length; i++) {
+              if (data[i].acf.galeria) {
+                  var $div = darBloqueItemObra(data[i].link, data[i].acf.galeria[0].sizes['large'], data[i].title.rendered, data[i].tipos_name, data[i].tipos_color);
+                  $('.archive .inside').append($div);
+              }
+          }
         })
       });
     }
+
+    function darBloqueItemObra(url, imgUrl, title, categArray, categColorArray) {
+      var $div = $('<a class="item_archive"></a>');
+      var $img = $('<div class="img"></div>');
+      var $title = $('<div class="title"></div>');
+      var $categorias = $('<div class="categ"></div>');
+
+      $div.attr('href', url);
+      $img.css({
+          'background-image': 'url("' + imgUrl + '")'
+      });
+
+      // for (var t = 0; t < autoresArray.length; t++) {
+      //     $autores.append('<li>' + autoresNames[t] + '</li>');
+      // }
+
+      for (var t = 0; t < categArray.length; t++) {
+        $title.append('<div class="categ" style="border-color: ' + categColorArray[t] + '"></div>');
+      }
+
+      $title.append(title);
+
+
+      $div
+      .append($img)
+      .append($title)
+      // .append($autores)
+      // .append($disciplinas)
+      ;
+
+      return $div;
+  }
     
 
 

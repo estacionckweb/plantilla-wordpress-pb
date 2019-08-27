@@ -687,6 +687,8 @@ section.archive .moreRest {
       position: absolute; }
   section.archive .moreRest.active .loader {
     display: block; }
+  section.archive .moreRest.active .icon {
+    display: none; }
 
 article.single {
   display: flex;
