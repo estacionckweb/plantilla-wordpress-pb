@@ -3,18 +3,32 @@
     // scketch del logo generativo
 
     var scketch = function(p) {
+      let imgBg;
+      let mask;
+
+      p.preload = function() {
+        imgBg = p.loadImage('http://localhost:8080/plataforma/wp-content/uploads/2019/08/programa-distrital-e-estimulos-beca-nacional-laboratorio-de-arte-ciencia-y-tecnologia-plataforma-bogota-fuga.jpg');
+      };
+
       p.setup = function() {
         p.createCanvas(400, 400);
       };
 
       p.draw = function() {
         p.background(23);
-        p.stroke(255);
-        p.strokeCap(p.SQUARE);
-        p.strokeWeight(5);
+        mask = p.createGraphics(400,400);
+        mask.stroke(23);
+        mask.strokeCap(p.SQUARE);
+        mask.strokeWeight(10);
+
+        // mask.clear();
+
 
         var desfase = p.mouseX / 50;
 
+
+        // p.blendMode(p.SCREEN);
+        // p.background(23);
         for (var i = -100; i < 100; i++) {
           dibujarLineaArriba(i * 25 + desfase);
         }
@@ -26,6 +40,8 @@
         for (var i = -100; i < 100; i++) {
           dibujarLineaMedia(i * 25 + desfase * 3);
         }
+        p.image(imgBg, 0, 0, 400, 400);
+        p.image(mask,0,0,400,400);
 
         p.noStroke();
         p.fill(23);
@@ -34,15 +50,15 @@
       };
 
       dibujarLineaArriba = function(x) {
-        p.line(x, 0, 100 + x, 100);
+        mask.line(x, 0, 100 + x, 100);
       };
 
       dibujarLineaBaja = function(x) {
-        p.line(x, 300, 100 + x, 400);
+        mask.line(x, 300, 100 + x, 400);
       };
 
       dibujarLineaMedia = function(x) {
-        p.line(400 + x, 100, 200 + x, 300);
+        mask.line(400 + x, 100, 200 + x, 300);
       };
     };
 
@@ -224,6 +240,6 @@
       }
     });
 
-    
+
   });
 })(jQuery, this);
