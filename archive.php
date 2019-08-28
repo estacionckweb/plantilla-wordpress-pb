@@ -45,7 +45,7 @@
 					</a>
 				<?php endwhile; endif; ?>
 
-				<a href="<?php echo get_blogInfo('url')?>/wp-json/wp/v2/agenda?per_page=20&page=" data-page="2" class="item_archive moreRest">
+				<a href="<?php echo get_blogInfo('url')?>/?rest_route=/wp/v2/agenda&per_page=20&page=" data-page="2" class="item_archive moreRest">
 					<div class="loader">
 						<div class="circles">
 							<span class="one"></span>

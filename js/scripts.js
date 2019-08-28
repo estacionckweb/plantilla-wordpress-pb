@@ -7,7 +7,7 @@
       let mask;
 
       p.preload = function() {
-        imgBg = p.loadImage('http://localhost:8080/plataforma/wp-content/uploads/2019/08/programa-distrital-e-estimulos-beca-nacional-laboratorio-de-arte-ciencia-y-tecnologia-plataforma-bogota-fuga.jpg');
+        imgBg = p.loadImage('http://172.16.24.10/plataforma/wp-content/uploads/2019/08/programa-distrital-e-estimulos-beca-nacional-laboratorio-de-arte-ciencia-y-tecnologia-plataforma-bogota-fuga.jpg');
       };
 
       p.setup = function() {
