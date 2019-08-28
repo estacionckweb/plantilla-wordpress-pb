@@ -29,15 +29,15 @@
 
         // p.blendMode(p.SCREEN);
         // p.background(23);
-        for (var i = -100; i < 100; i++) {
+        for (var i = -50; i < 50; i++) {
           dibujarLineaArriba(i * 25 + desfase);
         }
 
-        for (var i = -100; i < 100; i++) {
+        for (var i = -50; i < 50; i++) {
           dibujarLineaBaja(i * 25 - desfase + 5);
         }
 
-        for (var i = -100; i < 100; i++) {
+        for (var i = -50; i < 50; i++) {
           dibujarLineaMedia(i * 25 + desfase * 3);
         }
         p.image(imgBg, 0, 0, 400, 400);
