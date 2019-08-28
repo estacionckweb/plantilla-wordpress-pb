@@ -86,6 +86,7 @@ section.archive {
         background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==);
         position: relative;
         border:none;
+        min-height: 220px;
 
         &:after {
             display: none;
