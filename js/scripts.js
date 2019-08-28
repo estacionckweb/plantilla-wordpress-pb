@@ -16,10 +16,10 @@
 
       p.draw = function() {
         p.background(23);
-        mask = p.createGraphics(400,400);
-        mask.stroke(23);
-        mask.strokeCap(p.SQUARE);
-        mask.strokeWeight(10);
+        // mask = p.createGraphics(400,400);
+        p.stroke(23);
+        p.strokeCap(p.SQUARE);
+        p.strokeWeight(10);
 
         // mask.clear();
 
@@ -29,6 +29,8 @@
 
         // p.blendMode(p.SCREEN);
         // p.background(23);
+        p.image(imgBg, 0, 0, 400, 400);
+
         for (var i = -50; i < 50; i++) {
           dibujarLineaArriba(i * 25 + desfase);
         }
@@ -40,8 +42,6 @@
         for (var i = -50; i < 50; i++) {
           dibujarLineaMedia(i * 25 + desfase * 3);
         }
-        p.image(imgBg, 0, 0, 400, 400);
-        p.image(mask,0,0,400,400);
 
         p.noStroke();
         p.fill(23);
@@ -50,15 +50,15 @@
       };
 
       dibujarLineaArriba = function(x) {
-        mask.line(x, 0, 100 + x, 100);
+        p.line(x, 0, 100 + x, 100);
       };
 
       dibujarLineaBaja = function(x) {
-        mask.line(x, 300, 100 + x, 400);
+        p.line(x, 300, 100 + x, 400);
       };
 
       dibujarLineaMedia = function(x) {
-        mask.line(400 + x, 100, 200 + x, 300);
+        p.line(400 + x, 100, 200 + x, 300);
       };
     };
 
