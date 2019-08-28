@@ -243,6 +243,8 @@ input:focus {
   padding-left: 10px;
   padding-right: 10px;
   height: 30px;
+  overflow-x: scroll;
+  overflow-y: hidden;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==); }
   .single .external_nav {
     max-width: 500px; }
@@ -256,7 +258,8 @@ input:focus {
     padding-left: 10px;
     padding-right: 30px;
     font-family: 'Inconsolata', monospace;
-    position: relative; }
+    position: relative;
+    white-space: nowrap; }
     .external_nav .link:before {
       content: '\E802';
       position: absolute;

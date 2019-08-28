@@ -294,6 +294,8 @@ input:focus {
     padding-left: 10px;
     padding-right: 10px;
     height: 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==);
     
     .single & {
@@ -313,6 +315,7 @@ input:focus {
         padding-right: 30px;
         font-family: 'Inconsolata', monospace;
         position: relative;
+        white-space: nowrap;
 
         &:before {
             content: '\E802';
