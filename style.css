@@ -672,7 +672,7 @@ section.archive .item_archive {
       height: auto;
       text-overflow: ellipsis;
       overflow: visible;
-      white-space: nowrap; }
+      white-space: unset; }
   section.archive .item_archive.info:after {
     display: none; }
   @media all and (max-width: 900px) {
