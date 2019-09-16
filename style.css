@@ -639,8 +639,7 @@ section.archive .item_archive {
       border: 3px solid white;
       border-radius: 30px;
       margin: 5px;
-      margin-left: 0;
-      background: white; }
+      margin-left: 0; }
   section.archive .item_archive .img {
     width: 220px;
     height: 220px;
@@ -648,21 +647,9 @@ section.archive .item_archive {
     left: 0;
     background-size: cover;
     background-position: center; }
-  section.archive .item_archive:after {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGElEQVQYV2NkYGBgEBcX/88IIl6+fMkIABxvBUfEPHeDAAAAAElFTkSuQmCC);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    content: '';
-    opacity: 1;
-    transition: all 0.25s ease; }
-  section.archive .item_archive:hover:after {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQYV2NkQAMSYhL/GZHFQAIvXr1ghAvCBECKwILIAmBBdAGQIAAClhFLTvxVgAAAAABJRU5ErkJggg==); }
   section.archive .item_archive:hover .title {
-    background-color: rgba(24, 22, 24, 0);
-    color: #fff; }
+    bottom: 50%;
+    transform: translate(0, 50%); }
   section.archive .item_archive.info:after {
     display: none; }
   @media all and (max-width: 900px) {
