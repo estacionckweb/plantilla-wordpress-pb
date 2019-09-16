@@ -265,9 +265,9 @@
             $('.archive .inside').append($div);
           }
         }
-
+        if(data.length == 20){
         $('.archive .inside').append($more);
-        bindRestNav();
+        bindRestNav();}
       })
     });
 
@@ -293,6 +293,10 @@
               $('.archive .inside').append($div);
             }
           }
+
+          if(data.length == 20){
+            $('.archive .inside').append($more);
+            bindRestNav();}
         })
       });
     }
