@@ -44,6 +44,14 @@ section.archive {
             bottom: 0;
             transition: all 0.25s ease;
             color: #999;
+
+            .txt_crop {
+                width: calc(100% - 70px);
+                height: 20px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
         }
 
         .img {
@@ -73,6 +81,14 @@ section.archive {
                 bottom: 50%;
                 transform: translate(0, 50%);
                 color: white;
+
+                .txt_crop {
+                    width: calc(100% - 70px);
+                    height: auto;
+                    text-overflow: ellipsis;
+                    overflow: visible;
+                    white-space: nowrap;
+                }
             }
         }
 

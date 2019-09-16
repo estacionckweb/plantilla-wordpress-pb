@@ -640,6 +640,12 @@ section.archive .item_archive {
       border-radius: 30px;
       margin: 5px;
       margin-left: 0; }
+    section.archive .item_archive .title .txt_crop {
+      width: calc(100% - 70px);
+      height: 20px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap; }
   section.archive .item_archive .img {
     width: 220px;
     height: 220px;
@@ -661,6 +667,12 @@ section.archive .item_archive {
     bottom: 50%;
     transform: translate(0, 50%);
     color: white; }
+    section.archive .item_archive:hover .title .txt_crop {
+      width: calc(100% - 70px);
+      height: auto;
+      text-overflow: ellipsis;
+      overflow: visible;
+      white-space: nowrap; }
   section.archive .item_archive.info:after {
     display: none; }
   @media all and (max-width: 900px) {
