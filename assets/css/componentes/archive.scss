@@ -55,6 +55,16 @@ section.archive {
             background-position: center;
         }
 
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
         &:hover {
             &:after {
                 background: rgba(0,0,0,0.4);
@@ -144,10 +154,10 @@ section.archive {
 #carrousel {
     height: calc(50vh + 40px);
     margin-top: 10vh;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==);
     overflow: hidden;
     padding: 20px;
     outline: none;
+    border: 1px solid white;
 
     .item {
         height: 50vh;
