@@ -255,6 +255,8 @@
         var $item = $(this);
         var url = $item.attr('href');
 
+        $more = $('.archive .moreRest').clone();
+
         $.getJSON(url, (data) => {
           console.log(data);
           $('.archive .inside').empty();
@@ -264,6 +266,8 @@
               $('.archive .inside').append($div);
             }
           }
+
+          $('.archive .inside').append($more);
         })
       });
 
