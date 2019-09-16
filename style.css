@@ -585,6 +585,8 @@ a img.aligncenter {
       .calendario_container #calendario .item.vacio {
         border-color: #555;
         background: #222; }
+  .calendario_container.front #calendario {
+    width: 100%; }
   .calendario_container .itemArchive {
     text-transform: uppercase;
     color: white;

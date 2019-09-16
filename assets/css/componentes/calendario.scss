@@ -223,6 +223,12 @@
         }
     }
 
+    &.front {
+        #calendario {
+            width: 100%;
+        }
+    }
+
     .itemArchive {
         text-transform: uppercase;
         color: white;
