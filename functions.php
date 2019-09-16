@@ -489,7 +489,8 @@ function cptg_custom_post_types()
 		'rewrite' => array( 'slug' => 'agenda','with_front' => true,'feeds' => false,'pages' => true ),
 		'query_var' => true,
 		'can_export' => true,
-		'show_in_rest' => true,
+        'show_in_rest' => true,
+        'taxonomies' => array('post_tag'),
 		'supports' => array( 'title','editor' ),
 	);
 	register_post_type( 'agenda', $args );
@@ -528,11 +529,6 @@ function cptg_custom_post_types()
 	);
 	register_taxonomy( 'tipos_agenda', array( 'agenda' ) , $args );
 }
-
-add_action( 'init', 'gp_register_taxonomy_for_object_type' );
-function gp_register_taxonomy_for_object_type() {
-    register_taxonomy_for_object_type( 'agenda' );
-};
 
 add_action( 'after_switch_theme', 'cptg_rewrite_flush' );
 function cptg_rewrite_flush()
