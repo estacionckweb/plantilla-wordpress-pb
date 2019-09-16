@@ -83,6 +83,12 @@
 
     if ($("body").hasClass("home")) var logo = new p5(scketch, "p5_canvas");
 
+    $('#carrousel').flickity({
+      // options
+      cellAlign: 'left',
+      contain: true
+    });
+
     // Linea del tiempo para la animación al inicio
     var tl_inicio = new TimelineMax();
 
