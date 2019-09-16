@@ -260,11 +260,14 @@ input:focus {
     .des {
         font-size: 1.25em;
         color: white;
+        margin-top: 10vh;
+        line-height: 30px;
 
         a {
             border: 1px solid white;
             padding: 3px;
-            
+            color: white;
+
             &.laboratorios {
                 
             }
