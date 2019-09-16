@@ -647,9 +647,12 @@ section.archive .item_archive {
     left: 0;
     background-size: cover;
     background-position: center; }
+  section.archive .item_archive:hover:after {
+    background: rgba(0, 0, 0, 0.4); }
   section.archive .item_archive:hover .title {
     bottom: 50%;
-    transform: translate(0, 50%); }
+    transform: translate(0, 50%);
+    color: white; }
   section.archive .item_archive.info:after {
     display: none; }
   @media all and (max-width: 900px) {
