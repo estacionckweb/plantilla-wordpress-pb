@@ -13,12 +13,12 @@
 
 			<div class="external_nav btm_margin">
 				<div class="link related">Archivo: <?php echo get_archive_post_type() ?></div>
-				<a href="" class="link">Ir al calendario</a>
-				<?php foreach($terms as $term): ?>
-					<div class="link categ <?php echo $term->slug; ?>" data-slug="<?php echo $term->slug; ?>">
+				<a class="link">Ir al calendario</a>
+				<?php foreach($terms as $term): print_r($term)?>
+					<a href="<?php echo get_blogInfo('url')?>/?rest_route=/wp/v2/agenda?tipos_agenda=<?php echo $term->term_id ?>&per_page=20" class="link categ <?php echo $term->slug; ?>" data-slug="<?php echo $term->slug; ?>">
 						<?php echo $term->name ?>
 						<div class="dot" style="background: <?php echo get_field('color', $term); ?>"></div>
-					</div>
+					</a>
 				<?php endforeach; ?>
 			</div>
 

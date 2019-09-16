@@ -71,8 +71,6 @@
       var width = $('#franjaTexto').width();
       var vel = 3 * texto;
 
-      //alert(texto);
-
       $('#franjaTexto p').css({
         'left': width
       });
@@ -81,8 +79,6 @@
       }, (20000000 / width), 'linear', function () {
         scrollTira();
       });
-
-      //alert('hola alerta');
     }
 
     if ($("body").hasClass("home")) var logo = new p5(scketch, "p5_canvas");
@@ -254,6 +250,14 @@
     bindRestNav();
 
     function bindRestNav() {
+      $('.archive .external_nav .link.categ').on('click', function(e){
+        e.preventDefault();
+        var $item = $(this);
+        var url = $item.attr('href');
+
+        console.log(url);
+      });
+
       $('.archive .moreRest').on('click', function (e) {
         e.preventDefault();
         var $item = $(this);
