@@ -27,7 +27,9 @@ section.archive {
             }
 
             padding: 10px;
-            display: inline-block;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
             font-size: 1.5em;
             background-color: rgba(24, 22, 24, 1);
             font-family: 'Inconsolata',

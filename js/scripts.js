@@ -249,6 +249,7 @@
 
     $more = $('.archive .moreRest').clone();
     bindRestNav();
+    
     $('.archive .external_nav .link.categ').on('click', function(e){
       e.preventDefault();
       var $item = $(this);

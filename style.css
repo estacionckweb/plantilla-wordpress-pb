@@ -615,10 +615,12 @@ section.archive .item_archive {
   border-bottom: 1px dashed #999; }
   section.archive .item_archive .title {
     padding: 10px;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     font-size: 1.5em;
     background-color: #181618;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Inconsolata', monospace;
     padding-top: 5px;
     padding-bottom: 5px;
     position: relative;
