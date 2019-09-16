@@ -261,7 +261,7 @@
             <div class="item">Quienes somos</div>
         </nav>
 
-        <?php the_content() ?>
+        <?php echo get_the_content() ?>
     </div>
 
     <div class="right">
