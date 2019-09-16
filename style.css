@@ -666,10 +666,10 @@ section.archive.front {
   display: flex;
   flex-wrap: wrap; }
   section.archive.front .item_archive {
-    width: 48%; }
+    width: 200px; }
     section.archive.front .item_archive .img {
       width: 100%;
-      height: 150px; }
+      height: 200px; }
 
 section.archive .moreRest {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==);
