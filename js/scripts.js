@@ -19,7 +19,7 @@
         // mask = p.createGraphics(400,400);
         p.stroke($('#logo').attr('data-color'));
         p.strokeCap(p.SQUARE);
-        p.strokeWeight(10);
+        p.strokeWeight(7);
 
         // mask.clear();
 

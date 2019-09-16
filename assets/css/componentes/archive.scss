@@ -158,9 +158,12 @@ section.archive {
 }
 
 #carrousel {
-    height: 50vh;
+    height: calc(50vh + 40px);
     margin-top: 10vh;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==);
     overflow: hidden;
+    padding: 20px;
+    outline: none;
 
     .item {
         height: 50vh;

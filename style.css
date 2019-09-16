@@ -713,9 +713,12 @@ section.archive .moreRest {
     display: none; }
 
 #carrousel {
-  height: 50vh;
+  height: calc(50vh + 40px);
   margin-top: 10vh;
-  overflow: hidden; }
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==);
+  overflow: hidden;
+  padding: 20px;
+  outline: none; }
   #carrousel .item {
     height: 50vh;
     background-size: contain;
