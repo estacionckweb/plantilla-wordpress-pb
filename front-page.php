@@ -268,7 +268,7 @@
 
         <div class="des">
             Proximos eventos
-            <div class="calendario_container">
+            <div class="calendario_container front">
                 <div id="calendario">
                     
                     <?php crearMes() ?>
