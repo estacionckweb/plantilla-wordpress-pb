@@ -82,6 +82,12 @@ section.archive {
             }
         }
 
+        &.info {
+            &.after {
+                display: none;
+            }
+        }
+
         @media all and (max-width: 900px) {
             width: calc(50% - 10px);
         }
