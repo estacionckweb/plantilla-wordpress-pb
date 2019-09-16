@@ -256,7 +256,7 @@
         var url = $item.attr('href');
 
         $.getJSON(url, (data) => {
-          // console.log(data);
+          console.log(data);
           for (var i = 0; i < data.length; i++) {
             if (data[i].acf.galeria) {
               var $div = darBloqueItemObra(data[i].link, data[i].acf.galeria[0].sizes['large'], data[i].title.rendered, data[i].tipos_name, data[i].tipos_color);
