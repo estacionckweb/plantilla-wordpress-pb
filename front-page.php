@@ -268,13 +268,15 @@
 
         <div class="des">
             Proximos eventos
+            <div class="calendario_container">
+                <div id="calendario">
+                    
+                    <?php crearMes() ?>
+                    <?php crearMesSiguiente() ?>
 
-            <div id="calendario">
-				
-				<?php crearMes() ?>
-				<?php crearMesSiguiente() ?>
-
-			</div>
+                </div>
+            </div>
+            
         </div>
     </div>
 
