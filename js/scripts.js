@@ -247,13 +247,13 @@
       }
     });
 
+    $more = $('.archive .moreRest').clone();
     bindRestNav();
     $('.archive .external_nav .link.categ').on('click', function(e){
       e.preventDefault();
       var $item = $(this);
       var url = $item.attr('href');
 
-      $more = $('.archive .moreRest').clone();
       $more.attr('data-page', '2');
       $more.attr('href', url + '&page=');
 
