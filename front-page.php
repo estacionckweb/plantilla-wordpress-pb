@@ -297,7 +297,9 @@
                             <?php $color = get_field('color', $item); ?>
                             <div class="categ <?php echo $item->slug ?>" style="border-color: <?php echo $color ?>"></div>
                         <?php endforeach; endif; ?>
-                        <?php the_title(); ?>
+                        <div class="txt_crop">
+                            <?php the_title(); ?>
+                        </div>
                     </div>
                 </a>
             <?php endforeach;?>
