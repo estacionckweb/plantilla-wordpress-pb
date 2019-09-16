@@ -248,6 +248,8 @@ input:focus {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==); }
   .single .external_nav {
     max-width: 500px; }
+  .external_nav .contenidoinfo {
+    display: none; }
   .archive .external_nav {
     margin: 5px; }
   .external_nav .link {

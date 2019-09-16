@@ -17,6 +17,7 @@
 				<?php foreach($terms as $term): ?>
 					<a href="<?php echo get_blogInfo('url')?>/?rest_route=/wp/v2/agenda&tipos_agenda=<?php echo $term->term_id ?>&per_page=20" class="link categ <?php echo $term->slug; ?>" data-slug="<?php echo $term->slug; ?>">
 						<?php echo $term->name ?>
+						<div class="contentinfo"><?php echo get_field('contenido', $term) ?></div>
 						<div class="dot" style="background: <?php echo get_field('color', $term); ?>"></div>
 					</a>
 				<?php endforeach; ?>
@@ -31,7 +32,7 @@
 			<div class="inside">
 
 				<div class="item_archive info">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus cupiditate laborum architecto laboriosam ab. Quos blanditiis atque odit tempora tenetur voluptatem, aliquid dolores doloribus natus, soluta assumenda! Quisquam, quidem ea.
+					
 				</div>
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 				<?php
