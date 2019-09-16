@@ -716,7 +716,7 @@ section.archive .moreRest {
   overflow: hidden;
   padding: 20px;
   outline: none;
-  border: 1px solid white; }
+  border: 1px dashed white; }
   #carrousel .item {
     height: 50vh;
     background-size: contain;

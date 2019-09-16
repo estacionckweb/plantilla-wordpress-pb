@@ -256,9 +256,9 @@
         <!-- menu para el homepage -->
 
         <nav id="menu">
-            <div class="item">Convocatorias</div>
-            <div class="item">Laboratorios</div>
-            <div class="item">Quienes somos</div>
+            <a href="<?php echo get_blogInfo('url')?>/?page_id=13" class="item">El calendario</a>
+            <a href="<?php echo get_blogInfo('url')?>/?post_type=agenda" class="item">El archivo</a>
+            <a href="#" class="item">Quienes somos</a>
         </nav>
 
         <?php echo get_the_content() ?>
