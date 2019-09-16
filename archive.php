@@ -25,7 +25,7 @@
 
 			<div id="franjaTexto">
 				<p>
-					Archivo en construcción / Archive under construction
+					Esto es un texto de portada para plataforma
 				</p>
 			</div>
 

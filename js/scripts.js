@@ -248,6 +248,8 @@
     });
 
     $more = $('.archive .moreRest').clone();
+    $infoArchivo = $('.archive .info.item_archive').clone();
+    $('.archive .info.item_archive').remove();
     bindRestNav();
 
     $('.archive .external_nav .link.categ').on('click', function(e){
@@ -256,7 +258,7 @@
 
       $('.archive .external_nav .link.categ.active').removeClass('active');
       $item.addClass('active');
-      
+
       var url = $item.attr('href');
 
       $more.attr('data-page', '2');
