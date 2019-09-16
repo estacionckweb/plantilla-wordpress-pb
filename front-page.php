@@ -267,6 +267,13 @@
     <div class="right">
         <!-- Cargar los últimos elementos en la base de datos -->
 
+        <div id="carrousel">
+            <?php $galeria = get_field('galeria_front') ?>
+            <?php if($galeria): foreach($galeria as $img): ?>
+                <div class="item gal" style="background-image: url()"></div>
+            <?php endforeach; endif; ?>
+        </div>
+
         <section class="archive front">
             <?php
                 $args = array(

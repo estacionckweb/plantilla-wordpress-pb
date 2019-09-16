@@ -712,6 +712,14 @@ section.archive .moreRest {
   section.archive .moreRest.active .icon {
     display: none; }
 
+#carrousel {
+  height: 50vh; }
+  #carrousel .item {
+    height: 50vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
+
 article.single {
   display: flex;
   width: 100%; }

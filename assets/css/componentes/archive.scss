@@ -156,3 +156,14 @@ section.archive {
         }
     }
 }
+
+#carrousel {
+    height: 50vh;
+
+    .item {
+        height: 50vh;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
