@@ -664,8 +664,6 @@ section.archive .item_archive {
   section.archive .item_archive:hover:after {
     background: rgba(0, 0, 0, 0.7); }
   section.archive .item_archive:hover .title {
-    bottom: 50%;
-    transform: translate(0, 50%);
     color: white; }
     section.archive .item_archive:hover .title .txt_crop {
       width: calc(100% - 70px);
