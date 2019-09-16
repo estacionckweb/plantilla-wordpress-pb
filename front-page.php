@@ -265,6 +265,17 @@
             Plataforma Bogotá hace <a href="" class="laboratorios">Laboratorios</a>, <a class="convocatorias" href="">Convocatorias</a> y Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenemos un <a href="" class="club_electronica">club de electrónica</a> Et fugiat pariatur, incidunt aut eveniet harum iste laboriosam natus amet nam? Omnis ducimus aliquid, ad iste neque perferendis esse voluptate cumque?
             <br>Haz click <a href="">aqui</a> para saber más y conocer la casa.
         </div>
+
+        <div class="des">
+            Proximos eventos
+
+            <div id="calendario">
+				
+				<?php crearMes() ?>
+				<?php crearMesSiguiente() ?>
+
+			</div>
+        </div>
     </div>
 
     <div class="right">
