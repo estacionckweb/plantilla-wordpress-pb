@@ -255,13 +255,13 @@
 
         <!-- menu para el homepage -->
 
-        <!-- <nav id="menu">
+        <nav id="menu">
             <div class="item">Convocatorias</div>
             <div class="item">Laboratorios</div>
             <div class="item">Resultados</div>
             <div class="item">Nosotros</div>
             <div class="item">Contacto</div>
-        </nav> -->
+        </nav>
 
         <?php the_content() ?>
     </div>
