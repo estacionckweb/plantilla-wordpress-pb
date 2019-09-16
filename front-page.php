@@ -260,8 +260,11 @@
             <a href="<?php echo get_blogInfo('url')?>/?post_type=agenda" class="item">El archivo</a>
             <a href="#" class="item">Quienes somos</a>
         </nav>
-
-        <?php echo get_the_content() ?>
+        
+        <div class="des">
+            Plataforma Bogotá hace <a href="" class="laboratorios">Laboratorios</a>, <a class="convocatorias" href="">Convocatorias</a> y Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenemos un <a href="" class="club_electronica">club de electrónica</a> Et fugiat pariatur, incidunt aut eveniet harum iste laboriosam natus amet nam? Omnis ducimus aliquid, ad iste neque perferendis esse voluptate cumque?
+            <br>Haz click <a href="">aqui</a> para saber más y conocer la casa.
+        </div>
     </div>
 
     <div class="right">
