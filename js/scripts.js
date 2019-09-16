@@ -250,11 +250,14 @@
     $more = $('.archive .moreRest').clone();
     $infoArchivo = $('.archive .info.item_archive').clone();
     $('.archive .info.item_archive').remove();
+
     bindRestNav();
 
     $('.archive .external_nav .link.categ').on('click', function(e){
       e.preventDefault();
       var $item = $(this);
+
+      var $contenido = $item.find('.contentinfo').clone();
 
       $('.archive .external_nav .link.categ.active').removeClass('active');
       $item.addClass('active');
@@ -266,6 +269,8 @@
 
       $('.archive .inside').empty();
       $.getJSON(url, (data) => {
+        $infoArchivo.empty().apend($contenido);
+        $('.archive .inside').append($infoArchivo);
         for (var i = 0; i < data.length; i++) {
           if (data[i].acf.galeria) {
             var $div = darBloqueItemObra(data[i].link, data[i].acf.galeria[0].sizes['large'], data[i].title.rendered, data[i].tipos_name, data[i].tipos_color);
