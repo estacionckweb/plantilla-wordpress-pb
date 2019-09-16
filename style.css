@@ -635,7 +635,9 @@ section.archive .item_archive {
       width: 15px;
       height: 15px;
       border: 3px solid white;
-      border-radius: 30px; }
+      border-radius: 30px;
+      margin: 5px;
+      margin-left: 0; }
   section.archive .item_archive .img {
     width: 220px;
     height: 220px;
