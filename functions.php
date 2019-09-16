@@ -529,6 +529,11 @@ function cptg_custom_post_types()
 	register_taxonomy( 'tipos_agenda', array( 'agenda' ) , $args );
 }
 
+add_action( 'init', 'gp_register_taxonomy_for_object_type' );
+function gp_register_taxonomy_for_object_type() {
+    register_taxonomy_for_object_type( 'agenda' );
+};
+
 add_action( 'after_switch_theme', 'cptg_rewrite_flush' );
 function cptg_rewrite_flush()
 {

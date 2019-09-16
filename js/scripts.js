@@ -254,8 +254,6 @@
         e.preventDefault();
         var $item = $(this);
         var url = $item.attr('href');
-
-        console.log(url);
       });
 
       $('.archive .moreRest').on('click', function (e) {
