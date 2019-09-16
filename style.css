@@ -661,7 +661,7 @@ section.archive .item_archive {
   section.archive .item_archive:hover .title {
     background-color: rgba(24, 22, 24, 0);
     color: #fff; }
-  section.archive .item_archive.info.after {
+  section.archive .item_archive.info:after {
     display: none; }
   @media all and (max-width: 900px) {
     section.archive .item_archive {
