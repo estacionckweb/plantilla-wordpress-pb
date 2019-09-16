@@ -258,9 +258,7 @@
         <nav id="menu">
             <div class="item">Convocatorias</div>
             <div class="item">Laboratorios</div>
-            <div class="item">Resultados</div>
-            <div class="item">Nosotros</div>
-            <div class="item">Contacto</div>
+            <div class="item">Quienes somos</div>
         </nav>
 
         <?php the_content() ?>
