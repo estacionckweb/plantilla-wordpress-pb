@@ -255,11 +255,11 @@
 
         <!-- menu para el homepage -->
 
-        <nav id="menu">
+        <!-- <nav id="menu">
             <a href="<?php echo get_blogInfo('url')?>/?page_id=13" class="item">El calendario</a>
             <a href="<?php echo get_blogInfo('url')?>/?post_type=agenda" class="item">El archivo</a>
             <a href="#" class="item">Quienes somos</a>
-        </nav>
+        </nav> -->
         
         <div class="des">
             Plataforma Bogotá hace <a href="" class="laboratorios">Laboratorios</a>, <a class="convocatorias" href="">Convocatorias</a> y Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenemos un <a href="" class="club_electronica">club de electrónica</a> Et fugiat pariatur, incidunt aut eveniet harum iste laboriosam natus amet nam? Omnis ducimus aliquid, ad iste neque perferendis esse voluptate cumque?

@@ -256,6 +256,28 @@ input:focus {
     }
 }
 
+.left {
+    .des {
+        font-size: 1.25em;
+        color: white;
+
+        a {
+            border: 1px solid white;
+            padding: 3px;
+            
+            &.laboratorios {
+                
+            }
+            &.convocatorias {
+
+            }
+            &.club_electronica {
+
+            }
+        }
+    }
+}
+
 /* PIE DE PAGINA */
 
 .footer {

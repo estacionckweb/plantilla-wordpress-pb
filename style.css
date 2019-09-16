@@ -213,6 +213,13 @@ input:focus {
       transform-origin: 0%;
       transition: all 0.2s ease; }
 
+.left .des {
+  font-size: 1.25em;
+  color: white; }
+  .left .des a {
+    border: 1px solid white;
+    padding: 3px; }
+
 /* PIE DE PAGINA */
 .footer {
   display: flex;
