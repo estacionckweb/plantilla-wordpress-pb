@@ -56,9 +56,13 @@ section.archive {
         }
 
         &:hover {
+            &:after {
+                background: rgba(0,0,0,0.4);
+            }
             .title {
                 bottom: 50%;
                 transform: translate(0, 50%);
+                color: white;
             }
         }
 
