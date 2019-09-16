@@ -105,6 +105,7 @@ section.archive {
         padding-top: 10vh;
         display: flex;
         flex-wrap: wrap;
+        justify-content: flex-end;
 
         .item_archive {
             width: 200px;

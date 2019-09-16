@@ -215,10 +215,13 @@ input:focus {
 
 .left .des {
   font-size: 1.25em;
-  color: white; }
+  color: white;
+  margin-top: 10vh;
+  line-height: 30px; }
   .left .des a {
     border: 1px solid white;
-    padding: 3px; }
+    padding: 3px;
+    color: white; }
 
 /* PIE DE PAGINA */
 .footer {
@@ -687,7 +690,8 @@ section.archive .item_archive {
 section.archive.front {
   padding-top: 10vh;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: flex-end; }
   section.archive.front .item_archive {
     width: 200px; }
     section.archive.front .item_archive .img {
