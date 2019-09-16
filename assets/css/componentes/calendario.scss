@@ -226,6 +226,11 @@
     &.front {
         #calendario {
             width: 100%;
+
+            .mes {
+                grid-template-rows: repeat(2, 50px) repeat(5, 50px);
+                font-size: 1em;
+            }
         }
     }
 

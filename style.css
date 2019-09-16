@@ -587,6 +587,9 @@ a img.aligncenter {
         background: #222; }
   .calendario_container.front #calendario {
     width: 100%; }
+    .calendario_container.front #calendario .mes {
+      grid-template-rows: repeat(2, 50px) repeat(5, 50px);
+      font-size: 1em; }
   .calendario_container .itemArchive {
     text-transform: uppercase;
     color: white;
