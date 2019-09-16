@@ -1,23 +1,23 @@
-(function($, root, undefined) {
-  $(function() {
+(function ($, root, undefined) {
+  $(function () {
     // scketch del logo generativo
 
-    var scketch = function(p) {
+    var scketch = function (p) {
       let imgBg;
       let mask;
 
-      p.preload = function() {
-        imgBg = p.loadImage('http://172.16.24.10/plataforma/wp-content/uploads/2019/08/programa-distrital-e-estimulos-beca-nacional-laboratorio-de-arte-ciencia-y-tecnologia-plataforma-bogota-fuga.jpg');
+      p.preload = function () {
+        imgBg = p.loadImage($('#logo').attr('data-img'));
       };
 
-      p.setup = function() {
+      p.setup = function () {
         p.createCanvas(400, 400);
       };
 
-      p.draw = function() {
+      p.draw = function () {
         p.background(23);
         // mask = p.createGraphics(400,400);
-        p.stroke(23);
+        p.stroke($('#logo').attr('data-color'));
         p.strokeCap(p.SQUARE);
         p.strokeWeight(10);
 
@@ -49,18 +49,41 @@
         p.rect(80, 240, 240, 80);
       };
 
-      dibujarLineaArriba = function(x) {
+      dibujarLineaArriba = function (x) {
         p.line(x, 0, 100 + x, 100);
       };
 
-      dibujarLineaBaja = function(x) {
+      dibujarLineaBaja = function (x) {
         p.line(x, 300, 100 + x, 400);
       };
 
-      dibujarLineaMedia = function(x) {
+      dibujarLineaMedia = function (x) {
         p.line(400 + x, 100, 200 + x, 300);
       };
     };
+
+    setTimeout(function () {
+      scrollTira();
+    }, 50);
+
+    function scrollTira() {
+      var texto = $('#franjaTexto p').width();
+      var width = $('#franjaTexto').width();
+      var vel = 3 * texto;
+
+      //alert(texto);
+
+      $('#franjaTexto p').css({
+        'left': width
+      });
+      $('#franjaTexto p').animate({
+        'left': -texto
+      }, (20000000 / width), 'linear', function () {
+        scrollTira();
+      });
+
+      //alert('hola alerta');
+    }
 
     if ($("body").hasClass("home")) var logo = new p5(scketch, "p5_canvas");
 
@@ -71,11 +94,9 @@
       .add("start", "+=0.25")
       .staggerFromTo(
         "#TITULO g",
-        0.25,
-        {
+        0.25, {
           autoAlpha: 0
-        },
-        {
+        }, {
           autoAlpha: 1
         },
         0.15,
@@ -83,33 +104,27 @@
       )
       .fromTo(
         "#LINEA",
-        0.5,
-        {
+        0.5, {
           autoAlpha: 0
-        },
-        {
+        }, {
           autoAlpha: 1
         },
         "-=0.25"
       )
       .fromTo(
         "#BOGOTA",
-        2,
-        {
+        2, {
           autoAlpha: 0
-        },
-        {
+        }, {
           autoAlpha: 1
         }
       )
       .staggerFromTo(
         "#menu .item",
-        0.25,
-        {
+        0.25, {
           autoAlpha: 0,
           y: 10
-        },
-        {
+        }, {
           autoAlpha: 1,
           y: 0
         },
@@ -118,23 +133,21 @@
       )
       .fromTo(
         "#p5_canvas",
-        0.25,
-        {
+        0.25, {
           autoAlpha: 0
-        },
-        {
+        }, {
           autoAlpha: 1
         },
         "start"
       );
 
-    $("#calendario .mes .nav").on("click", function() {
+    $("#calendario .mes .nav").on("click", function () {
       $mes_nuevo = $("#calendario .mes.hide");
       $("#calendario .mes").addClass("hide");
       $mes_nuevo.removeClass("hide");
     });
 
-    $(".calendario_container .listado .item").on("click", function() {
+    $(".calendario_container .listado .item").on("click", function () {
       if ($(this).hasClass("active")) {
         $item = $(this);
         $item.removeClass("active");
@@ -153,13 +166,11 @@
         var tl_temp = new TimelineMax();
         tl_temp.add("start").fromTo(
           $item,
-          0.25,
-          {
+          0.25, {
             css: {
               height: $old_height + "px"
             }
-          },
-          {
+          }, {
             css: {
               height: $new_height + "px"
             }
@@ -187,7 +198,7 @@
               height: $new_height + "px"
             }
           })
-          .add(function() {
+          .add(function () {
             $item.find(".inside").fadeIn();
           });
 
@@ -195,7 +206,7 @@
       }
     });
 
-    $(".calendario_container .listado .item").each(function() {
+    $(".calendario_container .listado .item").each(function () {
       $item = $(this);
       activarCalendario($item, "siHay");
     });
@@ -227,14 +238,14 @@
       }
     }
 
-    $('.single .left .size').on('click', function(){
-      if(!$('.single .left').hasClass('wide')) {
-        $('.single .right').fadeOut(function(){
+    $('.single .left .size').on('click', function () {
+      if (!$('.single .left').hasClass('wide')) {
+        $('.single .right').fadeOut(function () {
           $('.single .left').addClass('wide');
         });
       } else {
         $('.single .left').removeClass('wide');
-        setTimeout(function(){
+        setTimeout(function () {
           $('.single .right').fadeIn();
         }, 500);
       }
@@ -243,7 +254,7 @@
     bindRestNav();
 
     function bindRestNav() {
-      $('.archive .moreRest').on('click', function(e){
+      $('.archive .moreRest').on('click', function (e) {
         e.preventDefault();
         var $item = $(this);
         var page = $item.attr('data-page');
@@ -258,10 +269,10 @@
           // console.log(data);
           $item.remove();
           for (var i = 0; i < data.length; i++) {
-              if (data[i].acf.galeria) {
-                  var $div = darBloqueItemObra(data[i].link, data[i].acf.galeria[0].sizes['large'], data[i].title.rendered, data[i].tipos_name, data[i].tipos_color);
-                  $('.archive .inside').append($div);
-              }
+            if (data[i].acf.galeria) {
+              var $div = darBloqueItemObra(data[i].link, data[i].acf.galeria[0].sizes['large'], data[i].title.rendered, data[i].tipos_name, data[i].tipos_color);
+              $('.archive .inside').append($div);
+            }
           }
         })
       });
@@ -275,7 +286,7 @@
 
       $div.attr('href', url);
       $img.css({
-          'background-image': 'url("' + imgUrl + '")'
+        'background-image': 'url("' + imgUrl + '")'
       });
 
       // for (var t = 0; t < autoresArray.length; t++) {
@@ -290,15 +301,15 @@
 
 
       $div
-      .append($img)
-      .append($title)
+        .append($img)
+        .append($title)
       // .append($autores)
       // .append($disciplinas)
       ;
 
       return $div;
-  }
-    
+    }
+
 
 
   });

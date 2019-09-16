@@ -618,7 +618,7 @@ section.archive .item_archive {
     display: inline-block;
     font-size: 1.5em;
     background-color: #181618;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Inconsolata', monospace;
     padding-top: 5px;
     padding-bottom: 5px;
     position: relative;
@@ -661,10 +661,21 @@ section.archive .item_archive {
     section.archive .item_archive {
       width: calc(50% - 10px); } }
 
+section.archive.front {
+  padding-top: 10vh;
+  display: flex;
+  flex-wrap: wrap; }
+  section.archive.front .item_archive {
+    width: 48%; }
+    section.archive.front .item_archive .img {
+      width: 100%;
+      height: 150px; }
+
 section.archive .moreRest {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==);
   position: relative;
-  border: none; }
+  border: none;
+  min-height: 220px; }
   section.archive .moreRest:after {
     display: none; }
   section.archive .moreRest .loader {
@@ -747,7 +758,8 @@ article.single {
       background: #d66bd8; }
     article.single .right .categ_name.laboratorio {
       background: #f1e340; }
-    article.single .right .categ_name, article.single .right .fecha {
+    article.single .right .categ_name,
+    article.single .right .fecha {
       font-family: 'Inconsolata', monospace;
       background: white;
       color: black;
@@ -760,7 +772,9 @@ article.single {
       font-size: 1.25em; }
     article.single .right .content {
       font-size: 1.5em; }
-      article.single .right .content p, article.single .right .content ul, article.single .right .content ol {
+      article.single .right .content p,
+      article.single .right .content ul,
+      article.single .right .content ol {
         max-width: 500px; }
       article.single .right .content a {
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQYV2NkQAMSYhL/GZHFQAIvXr1ghAvCBECKwILIAmBBdAGQIAAClhFLTvxVgAAAAABJRU5ErkJggg==);
@@ -793,11 +807,26 @@ article.single {
           color: black; }
   @media all and (max-width: 900px) {
     article.single {
-      flex-wrap: wrap;
-      flex-flow: column-reverse; }
-      article.single .left, article.single .right {
+      flex-wrap: wrap; }
+      article.single .left,
+      article.single .right {
         width: 100%;
         padding: 0; } }
+
+#franjaTexto {
+  margin: 5px;
+  height: 30px;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid white; }
+  #franjaTexto p {
+    color: white;
+    position: absolute;
+    width: 600px;
+    margin: 0;
+    line-height: 30px;
+    font-family: 'Inconsolata', monospace; }
 
 .loader {
   position: absolute;

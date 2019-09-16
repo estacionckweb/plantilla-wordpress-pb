@@ -3,7 +3,7 @@
 <!-- Logo generativo de Plataforma -->
 <article class="single">
 <div class="left">
-        <div id="logo">
+        <div id="logo" data-color="<?php echo get_field('color') ?>" data-img="<?php $img = get_field('imagen'); echo $img['url'] ?>">
             <div id="p5_canvas">
             </div>
             <div class="letras">
@@ -267,9 +267,34 @@
     <div class="right">
         <!-- Cargar los últimos elementos en la base de datos -->
 
-        <div class="elementos">
-            
-        </div>  
+        <section class="archive front">
+            <?php
+                $args = array(
+                    'post_type' => 'agenda',
+                    'numberposts' => 6,
+                );
+                $posts = get_posts($args);
+                foreach($posts as $post):
+                    $galeria = get_field('galeria', $post->ID);
+					$categ = get_the_terms($post->ID, 'tipos_agenda');
+					$class = '';
+
+					if($categ): foreach($categ as $cat):
+						$class .= $cat->slug . ' ';
+					endforeach; endif;
+            ?>
+                <a class="item_archive <?php echo $class; ?>" href="<?php echo get_permalink() ?>">
+                    <div class="img" style="background-image: url('<?php echo $galeria[0]['sizes']['large'] ?>')"></div>
+                    <div class="title">
+                        <?php if($categ): foreach($categ as $item): ?>
+                            <?php $color = get_field('color', $item); ?>
+                            <div class="categ <?php echo $item->slug ?>" style="border-color: <?php echo $color ?>"></div>
+                        <?php endforeach; endif; ?>
+                        <?php the_title(); ?>
+                    </div>
+                </a>
+            <?php endforeach;?>
+        </section>  
     </div>
 </article>
 

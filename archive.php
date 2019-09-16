@@ -22,6 +22,12 @@
 				<?php endforeach; ?>
 			</div>
 
+			<div id="franjaTexto">
+				<p>
+					Archivo en construcción / Archive under construction
+				</p>
+			</div>
+
 			<div class="inside">
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 				<?php

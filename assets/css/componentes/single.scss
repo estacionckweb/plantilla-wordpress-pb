@@ -68,7 +68,7 @@ article.single {
     .right {
         width: 50%;
         color: white;
-        padding-left: 20px; 
+        padding-left: 20px;
         padding-right: 20px;
 
         h1 {
@@ -85,7 +85,8 @@ article.single {
             }
         }
 
-        .categ_name, .fecha {
+        .categ_name,
+        .fecha {
             font-family: 'Inconsolata', monospace;
             background: white;
             color: black;
@@ -100,8 +101,10 @@ article.single {
 
         .content {
             font-size: 1.5em;
-            
-            p, ul, ol {
+
+            p,
+            ul,
+            ol {
                 max-width: 500px;
             }
 
@@ -126,6 +129,7 @@ article.single {
             height: 100px;
             align-items: center;
             background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJUlEQVQYV2NkQAP/////z4gsBhYAAZggTADEBwsiC4AF0QVAggAaRhQC9fJaWAAAAABJRU5ErkJggg==);
+
             .item {
                 color: white;
                 background: black;
@@ -144,16 +148,34 @@ article.single {
             }
         }
 
-        
+
     }
 
     @media all and (max-width: 900px) {
         flex-wrap: wrap;
-        flex-flow: column-reverse;
 
-        .left, .right {
+        .left,
+        .right {
             width: 100%;
             padding: 0;
         }
+    }
+}
+
+#franjaTexto {
+    margin: 5px;
+    height: 30px;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid white;
+
+    p {
+        color: white;
+        position: absolute;
+        width: 600px;
+        margin: 0;
+        line-height: 30px;
+        font-family: 'Inconsolata', monospace;
     }
 }
