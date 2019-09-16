@@ -713,7 +713,8 @@ section.archive .moreRest {
     display: none; }
 
 #carrousel {
-  height: 50vh; }
+  height: 50vh;
+  overflow: hidden; }
   #carrousel .item {
     height: 50vh;
     background-size: contain;
