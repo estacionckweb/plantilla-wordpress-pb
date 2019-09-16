@@ -258,7 +258,6 @@
         $more = $('.archive .moreRest').clone();
 
         $.getJSON(url, (data) => {
-          console.log(data);
           $('.archive .inside').empty();
           for (var i = 0; i < data.length; i++) {
             if (data[i].acf.galeria) {
