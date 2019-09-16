@@ -620,16 +620,16 @@ section.archive .item_archive {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    font-size: 1.5em;
-    background-color: #181618;
+    font-size: 1.15em;
+    background-color: #3a3a3a;
     font-family: 'Inconsolata', monospace;
     padding-top: 5px;
     padding-bottom: 5px;
-    position: relative;
+    position: absolute;
     z-index: 1;
     width: 100%;
-    margin-bottom: 5px;
     opacity: 1;
+    bottom: 0;
     transition: all 0.25s ease;
     color: #999; }
     section.archive .item_archive .title .categ {
@@ -639,15 +639,15 @@ section.archive .item_archive {
       border: 3px solid white;
       border-radius: 30px;
       margin: 5px;
-      margin-left: 0; }
+      margin-left: 0;
+      background: white; }
   section.archive .item_archive .img {
     width: 220px;
     height: 220px;
     top: 0;
     left: 0;
     background-size: cover;
-    background-position: center;
-    margin-bottom: 10px; }
+    background-position: center; }
   section.archive .item_archive:after {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGElEQVQYV2NkYGBgEBcX/88IIl6+fMkIABxvBUfEPHeDAAAAAElFTkSuQmCC);
     position: absolute;
@@ -672,8 +672,7 @@ section.archive .item_archive {
 section.archive.front {
   padding-top: 10vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly; }
+  flex-wrap: wrap; }
   section.archive.front .item_archive {
     width: 200px; }
     section.archive.front .item_archive .img {
