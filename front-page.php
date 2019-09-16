@@ -262,6 +262,8 @@
             <div class="item">Nosotros</div>
             <div class="item">Contacto</div>
         </nav> -->
+
+        <?php the_content() ?>
     </div>
 
     <div class="right">
