@@ -51,7 +51,7 @@
 								<?php $color = get_field('color', $item); ?>
 								<div class="categ <?php echo $item->slug ?>" style="border-color: <?php echo $color ?>"></div>
 							<?php endforeach; endif; ?>
-							<div class="txt_cop">
+							<div class="txt_crop">
 								<?php the_title(); ?>
 							</div>
 						</div>
