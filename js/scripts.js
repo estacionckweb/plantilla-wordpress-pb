@@ -269,7 +269,8 @@
 
       $('.archive .inside').empty();
       $.getJSON(url, (data) => {
-        $infoArchivo.empty().apend($contenido);
+        $infoArchivo.empty();
+        $infoArchivo.apend($contenido);
         $('.archive .inside').append($infoArchivo);
         for (var i = 0; i < data.length; i++) {
           if (data[i].acf.galeria) {
