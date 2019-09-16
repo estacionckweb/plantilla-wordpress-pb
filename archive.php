@@ -29,6 +29,10 @@
 			</div>
 
 			<div class="inside">
+
+				<div class="item_archive info">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus cupiditate laborum architecto laboriosam ab. Quos blanditiis atque odit tempora tenetur voluptatem, aliquid dolores doloribus natus, soluta assumenda! Quisquam, quidem ea.
+				</div>
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 				<?php
 					$galeria = get_field('galeria');

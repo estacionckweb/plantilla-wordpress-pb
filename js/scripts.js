@@ -249,10 +249,14 @@
 
     $more = $('.archive .moreRest').clone();
     bindRestNav();
-    
+
     $('.archive .external_nav .link.categ').on('click', function(e){
       e.preventDefault();
       var $item = $(this);
+
+      $('.archive .external_nav .link.categ.active').removeClass('active');
+      $item.addClass('active');
+      
       var url = $item.attr('href');
 
       $more.attr('data-page', '2');
