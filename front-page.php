@@ -1,9 +1,17 @@
 <?php get_header(); ?>
 
 <!-- Logo generativo de Plataforma -->
-<article class="single">
+
+<div id="franjaTexto">
+				<p>
+					Esto es un texto de portada para plataforma
+				</p>
+			</div>
+
+<article class="single block">
+
 <div class="left">
-        <div id="logo" data-color="<?php echo get_field('color') ?>" data-img="<?php $img = get_field('imagen'); echo $img['url'] ?>">
+        <div id="logo" data-color="<?php echo get_field('color', 7) ?>" data-img="<?php $img = get_field('imagen', 7); echo $img['url'] ?>">
             <div id="p5_canvas">
             </div>
             <div class="letras">
@@ -254,20 +262,25 @@
         </div>
 
         <!-- menu para el homepage -->
+        <!-- editable en el back -->
 
-        <!-- <nav id="menu">
-            <a href="<?php echo get_blogInfo('url')?>/?page_id=13" class="item">El calendario</a>
-            <a href="<?php echo get_blogInfo('url')?>/?post_type=agenda" class="item">El archivo</a>
-            <a href="#" class="item">Quienes somos</a>
-        </nav> -->
+        <nav id="menu">
+            <?php get_sidebar() ?>
+        </nav>
         
-        <div class="des">
+        <!-- search -->
+        <form class="search nomargin" method="get" action="<?php echo home_url(); ?>" role="search">
+            <input class="search-input nomargin" type="search" name="s" placeholder="<?php _e( 'Search', 'plataforma' ); ?>">
+            <button class="search-submit" type="submit" role="button"><?php _e( 'Search', 'plataforma' ); ?></button>
+        </form>
+        <!-- /search -->
+        <!-- <div class="des">
             Plataforma Bogotá hace <a href="" class="laboratorios">Laboratorios</a>, <a class="convocatorias" href="">Convocatorias</a> y Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenemos un <a href="" class="club_electronica">club de electrónica</a> Et fugiat pariatur, incidunt aut eveniet harum iste laboriosam natus amet nam? Omnis ducimus aliquid, ad iste neque perferendis esse voluptate cumque?
             <br>Haz click <a href="">aqui</a> para saber más y conocer la casa.
-        </div>
+        </div> -->
 
         <div class="des">
-            Proximos eventos
+            <h1>Calendario</h1>
             <div class="calendario_container front">
                 <div id="calendario">
                     
@@ -275,21 +288,156 @@
                     <?php crearMesSiguiente() ?>
 
                 </div>
+
+                <div class="listado">
+				<?php
+					global $query_string;
+					$args = array(
+						'post_type' => 'agenda',
+						'tax_query' => array(
+							array(
+							  'taxonomy' => 'tipos_agenda',
+							  'field' => 'term_id', 
+							  'terms' => 7, /// Where term_id of Term 1 is "1".
+							  'include_children' => false
+							)
+							)
+					);
+					$posts = query_posts($args);
+
+					if (have_posts()): while (have_posts()) : the_post();
+
+					$inicio = get_field('fecha_inicio');
+					$todo_el_dia = get_field('todo_el_dia');
+					$cierre = get_field('fecha_cierre');
+
+					$galeria = get_field('galeria');
+
+					if($todo_el_dia == 1) $cierre = '';
+
+					$categ = get_the_terms(get_the_ID(), 'tipos_agenda');
+				?>
+
+					
+
+					<div class="item" data-inicio="<?php echo $inicio ?>" data-cierre="<?php echo $cierre ?>">
+						<div class="top">
+							<?php if($categ): foreach($categ as $item): ?>
+							<?php
+								$color = get_field('color', $item);
+							?>
+								<div class="categ <?php echo $item->slug ?>" style="border-color: <?php echo $color ?>"></div>
+							<?php endforeach; endif; ?>
+							<div class="nombre"><?php the_title() ?></div>
+							<!-- <div class="fecha">
+								<?php if($todo_el_dia == 1): ?>
+									<?php echo $inicio ?>
+								<?php else: ?>
+									<?php echo $inicio ?> a <?php echo $cierre ?>
+								<?php endif; ?>
+							</div> -->
+						</div>
+						<div class="inside">
+							<?php if($categ): foreach($categ as $item): ?>
+								<?php
+									$color = get_field('color', $item);
+								?>
+								<div style="background-color: <?php echo $color ?>" class="categ_name <?php echo $item->slug ?>">
+									<?php echo $item->name ?>
+								</div>
+							<?php endforeach; endif; ?>
+							
+							<a href="<?php echo get_permalink() ?>" class="link">Saber más</a>
+
+							<div class="content">
+								<div class="img">
+									<img src="<?php echo $galeria[0]['sizes']['thumbnail'] ?>" alt="">
+								</div>
+								<div class="txt"><?php echo get_field('breve_descripcion'); ?></div>
+							</div>
+						</div>
+					</div>
+
+				<?php endwhile; endif; ?>
+			</div>
             </div>
             
+            <div class="logos_admin">
+                <a href="https://bogota.gov.co/" class="item">
+                    <img src="<?php echo get_template_directory_uri()?>/img/br.png" alt="">
+                </a>
+                <a href="https://bogota.gov.co/" class="item">
+                    <img src="<?php echo get_template_directory_uri()?>/img/bogota.png" alt="">
+                </a>
+                <a href="#" class="item">
+                    <img src="<?php echo get_template_directory_uri()?>/img/linea.png" alt="">
+                </a>
+            </div>
         </div>
     </div>
 
     <div class="right">
         <!-- Cargar los últimos elementos en la base de datos -->
-
+        <section class="frontStar">
+        	<div class="inside">
+	        	<?php
+	                // agregar sticky
+	                $args = array(
+	                    'post_type' => 'agenda',
+	                    'numberposts' => 5,
+	                );
+	                $posts = get_posts($args);
+	                foreach($posts as $post):
+	                    $galeria = get_field('galeria', $post->ID);
+	            ?>
+                    <div class="img" style="background-image: url('<?php echo $galeria[0]['sizes']['large'] ?>')">
+                        <a href="<?php echo get_permalink($post->ID) ?>" class="title">
+                            <?php echo $post->post_title; ?>
+                            <!-- <div class="info">
+                                <?php echo get_the_excerpt($post->ID); ?>
+                            </div> -->
+                        </a>
+                    </div>
+	            <?php endforeach;?>
+            </div>
+            
+            <div class="navBlock">
+                <div class="itemNav next"></div>
+                <div class="itemNav prev"></div>
+            </div>
+        </section>
         
+        <div class="tags mini">
+            <h3 class="title">Conoce Plataforma Bogotá</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ex lacus, volutpat a orci quis, <a>hendrerit ultrices purus</a>. Morbi consectetur nunc nisl, id pulvinar mauris consectetur ut. Fusce lacus enim, porta eu tortor nec, efficitur tempus elit. Nulla facilisi. Integer dapibus ut nulla vitae porta. Proin et enim pulvinar, sodales odio eu, molestie sapien. Nulla molestie iaculis <a>ipsum efficitur scelerisque</a>. Aliquam ac porta metus, nec porta ex. Fusce sed lectus eros. Vivamus molestie nisi quis ex euismod, a scelerisque sem porta. Ut sit amet turpis sit amet sem vulputate vehicula in non nunc. Duis accumsan, ipsum ut semper malesuada, velit sapien ultricies metus, a posuere purus nibh a lorem.</p>
+        </div>
+
+        <div class="tags">
+            <h3 class="title">Explora nuestros talleres por temática</h3>
+            
+            <?php
+                $tags = get_tags();
+                $html = '<ul>';
+                foreach ( $tags as $tag ) {
+                if($tag->slug != "migliori"){
+                $tag_link = '?rest_route=/wp/v2/agenda&tags=' . $tag->term_id;
+                $html .= "<li><a href='{$tag_link}' class='{$tag->slug}'>";
+                $html .= "{$tag->name}</a></li>";
+                
+                        }
+                }
+                $html .= '</ul>';
+                echo $html;
+            ?>
+        </div>
 
         <section class="archive front">
             <?php
+                // agregar sticky
                 $args = array(
                     'post_type' => 'agenda',
-                    'numberposts' => 12,
+                    'numberposts' => 9,
+                    'orderby' => 'rand'
                 );
                 $posts = get_posts($args);
                 foreach($posts as $post):
@@ -314,7 +462,16 @@
                     </div>
                 </a>
             <?php endforeach;?>
-        </section> 
+
+            <div class="external_nav top_margin">
+					<!-- <a href="" class="link">Ir al calendario</a> -->
+					<a href="<?php echo get_blogInfo('url') ?>/?post_type=agenda" class="link">Ir al archivo</a>
+				</div>
+        </section>
+
+        
+
+        <!-- anadit nube de tags -->
 
         <!-- <div id="carrousel">
             <?php $galeria = get_field('galeria_front') ?>

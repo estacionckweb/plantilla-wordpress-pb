@@ -7,11 +7,13 @@
       let mask;
 
       p.preload = function () {
+        // console.log('hola');
         imgBg = p.loadImage($('#logo').attr('data-img'));
       };
 
       p.setup = function () {
         p.createCanvas(400, 400);
+        console.log('hola');
       };
 
       p.draw = function () {
@@ -62,6 +64,103 @@
       };
     };
 
+    var scketch2 = function (p) {
+      var particulas_a = [];
+      var particlulas_b = [];
+      var particlulas_c = [];
+      var nums = 50;
+      var noiseScale = 40;
+
+      p.setup = () => {
+        p.createCanvas(400,400);
+        for(var i = 0; i < nums; i++){
+          particulas_a[i] = new Particle(p.random(0, p.width),p.random(0,p.height));
+          particlulas_b[i] = new Particle(p.random(0, p.width),p.random(0,p.height));
+          particlulas_c[i] = new Particle(p.random(0, p.width),p.random(0,p.height));
+        }
+      }
+
+      p.draw = () => {
+        p.noStroke();
+        p.smooth();
+          for(var i = 0; i < nums; i++){
+          var radius = 1;
+          var alpha = 100;
+
+          p.fill(255);
+          particulas_a[i].move();
+          particulas_a[i].display(radius);
+          particulas_a[i].checkEdge();
+
+          particlulas_b[i].move();
+          particlulas_b[i].display(radius);
+          particlulas_b[i].checkEdge();
+
+          particlulas_c[i].move();
+          particlulas_c[i].display(radius);
+          particlulas_c[i].checkEdge();
+        }  
+      }
+
+      function Particle(x, y){
+        this.dir = p.createVector(0, 0);
+        this.vel = p.createVector(0, 0);
+        this.pos = p.createVector(x, y);
+        this.speed = 1;
+      
+        this.move = function(){
+          var angle = p.noise(this.pos.x/noiseScale, this.pos.y/noiseScale)*p.PI*noiseScale;
+          this.dir.x = p.sin(angle);
+          this.dir.y = p.cos(angle);
+          this.vel = this.dir.copy();
+          this.vel.mult(this.speed);
+          this.pos.add(this.vel);
+          
+          if(p.random(0, 1) >= 0.9){
+            // this.pos.x = random(50, 500);
+            // this.pos.y = random(50, 500);
+            
+            var numRandom = parseInt(p.random(0,4));
+            if(numRandom == 0){
+              this.pos.x = p.random(10,390);
+              this.pos.y = p.random(10,80);
+            } else if(numRandom == 1){
+              this.pos.x = p.random(10,390);
+              this.pos.y = p.random(160,240);
+            } else if(numRandom == 2){
+              this.pos.x = p.random(10,390);
+              this.pos.y = p.random(320,390);
+            } else if(numRandom == 3){
+              
+              var newRandom = parseInt(p.random(0,4));
+              if(newRandom == 0){
+                this.pos.x = p.random(10,80);
+                this.pos.y = p.random(80,160);
+              } else if(newRandom == 1){
+                this.pos.x = p.random(320,390);
+                this.pos.y = p.random(80,160);
+              } else if(newRandom == 2){
+                this.pos.x = p.random(10,80);
+                this.pos.y = p.random(240,320);
+              } else if(newRandom == 3){
+                this.pos.x = p.random(320,390);
+                this.pos.y = p.random(240,320);
+              }
+                
+            }
+          }
+        }
+      
+        this.checkEdge = function(){
+      
+        }
+      
+        this.display = function(r){
+          p.ellipse(this.pos.x, this.pos.y, r, r);
+        }
+      }
+    };
+
     setTimeout(function () {
       scrollTira();
     }, 50);
@@ -76,18 +175,55 @@
       });
       $('#franjaTexto p').animate({
         'left': -texto
-      }, (20000000 / width), 'linear', function () {
+      }, (50000000 / width), 'linear', function () {
         scrollTira();
       });
     }
 
-    if ($("body").hasClass("home")) var logo = new p5(scketch, "p5_canvas");
+    var randomSketch = parseInt(Math.random() * 2);
+
+    if ($("body").hasClass("home") && randomSketch == 0) var logo = new p5(scketch2, "p5_canvas");
+    else if ($("body").hasClass("home") && randomSketch == 1) var logo = new p5(scketch, "p5_canvas");
 
     $('#carrousel').flickity({
       // options
       cellAlign: 'left',
+      contain: true,
+      prevNextButtons: false,
+      pageDots: false
+    });
+
+    var elem = document.querySelector('.frontStar .inside');
+    var frontSlider = new Flickity(elem, {
+      // options
+      cellAlign: 'left',
       contain: true
     });
+
+    $('.frontStar .next').on('click', () => {
+      frontSlider.next();
+    })
+
+    $('.frontStar .prev').on('click', () => {
+      frontSlider.previous();
+    })
+
+
+    var elemSingle = document.querySelector('.single:not(.block) .left .inside');
+    var frontSliderSingle = new Flickity(elemSingle, {
+      // options
+      cellAlign: 'left',
+      contain: true
+    });
+
+    $('.left .next').on('click', () => {
+      frontSliderSingle.next();
+    })
+
+    $('.left .prev').on('click', () => {
+      frontSliderSingle.previous();
+    })
+
 
     // Linea del tiempo para la animación al inicio
     var tl_inicio = new TimelineMax();
@@ -121,18 +257,18 @@
           autoAlpha: 1
         }
       )
-      .staggerFromTo(
-        "#menu .item",
-        0.25, {
-          autoAlpha: 0,
-          y: 10
-        }, {
-          autoAlpha: 1,
-          y: 0
-        },
-        0.15,
-        "start"
-      )
+      // .staggerFromTo(
+      //   "#menu .item",
+      //   0.25, {
+      //     autoAlpha: 0,
+      //     y: 10
+      //   }, {
+      //     autoAlpha: 1,
+      //     y: 0
+      //   },
+      //   0.15,
+      //   "start"
+      // )
       .fromTo(
         "#p5_canvas",
         0.25, {
@@ -142,6 +278,10 @@
         },
         "start"
       );
+
+      var hash = location.hash.substr(1);
+
+      
 
     $("#calendario .mes .nav").on("click", function () {
       $mes_nuevo = $("#calendario .mes.hide");
@@ -270,7 +410,7 @@
 
       var url = $item.attr('href');
 
-      $more.attr('data-page', '2');
+      $more.attr('data-page', 2);
       $more.attr('href', url + '&page=');
 
       $('.archive .inside').empty();
@@ -286,6 +426,8 @@
         }
         if(data.length == 20){
         $('.archive .inside').append($more);
+        $more.attr('data-page', page + 1);
+
         bindRestNav();}
       })
     });
@@ -295,8 +437,9 @@
       $('.archive .moreRest').on('click', function (e) {
         e.preventDefault();
         var $item = $(this);
-        var page = $item.attr('data-page');
+        var page = parseInt($item.attr('data-page'));
         var url = $item.attr('href');
+        // console.log(page);
 
         var finalUrl = url + page;
 
@@ -307,14 +450,15 @@
           // console.log(data);
           $item.remove();
           for (var i = 0; i < data.length; i++) {
-            if (data[i].acf.galeria) {
-              var $div = darBloqueItemObra(data[i].link, data[i].acf.galeria[0].sizes['large'], data[i].title.rendered, data[i].tipos_name, data[i].tipos_color);
+            // if (data[i].acf.galeria) { data[i].acf.galeria[0].sizes['large']
+              var $div = darBloqueItemObra(data[i].link, '', data[i].title.rendered, data[i].tipos_name, data[i].tipos_color);
               $('.archive .inside').append($div);
-            }
+            // }
           }
 
           if(data.length == 20){
             $('.archive .inside').append($more);
+            $more.attr('data-page', page + 1).removeClass('active');
             bindRestNav();}
         })
       });
@@ -352,7 +496,48 @@
       return $div;
     }
 
+    if(hash != '') {
+      // alert(hash);
+      let $elems = $('.external_nav .link.categ');
+      if($elems.length > 0) {
+        $('.external_nav .link.categ.' + hash).click();
+        console.log(hash);
+        window.location.hash = '#';
+      }
+    }
 
+    $('.btnMenu').on('click', () => {
+      if($('.btnMenu').hasClass('active')){
+        $('.btnMenu').removeClass('active');
+        $('body').removeClass('activeMenu');
+        $('.wrapper').removeClass('activeMenu');
+        $('.sideMenu').removeClass('activeMenu');
+      } else {
+        $('.btnMenu').addClass('active');
+        $('body').addClass('activeMenu');
+        $('.wrapper').addClass('activeMenu');
+        $('.sideMenu').addClass('activeMenu');
+      }
+    })
+
+    $('.tags a').on('click', (e) => {
+      var $elem = $(e.target);
+      var url = $elem.attr('href');
+      // console.log(e);
+      $.getJSON(url, (data) => {
+        // console.log(data);
+        $elem.addClass('active');
+        for(var i = 0; i < data.length; i++){
+          var $new = $('<a></a>');
+          $new.addClass('postLink');
+          $new.html(' [ ' + data[i].title.rendered + ' ] ');
+          $new.attr('href', data[i].link);
+          $new.insertAfter($elem);
+        }
+      });
+      
+      return false;
+    })
 
   });
 })(jQuery, this);

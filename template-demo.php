@@ -21,6 +21,14 @@
 					global $query_string;
 					$args = array(
 						'post_type' => 'agenda',
+						'tax_query' => array(
+							array(
+							  'taxonomy' => 'tipos_agenda',
+							  'field' => 'term_id', 
+							  'terms' => 7, /// Where term_id of Term 1 is "1".
+							  'include_children' => false
+							)
+							)
 					);
 					$posts = query_posts($args);
 
@@ -57,9 +65,15 @@
 							</div> -->
 						</div>
 						<div class="inside">
-							<div class="categ_name <?php echo $categ[0]->slug ?>">
-								<?php echo $categ[0]->name ?>
-							</div>
+							<?php if($categ): foreach($categ as $item): ?>
+								<?php
+									$color = get_field('color', $item);
+								?>
+								<div style="background-color: <?php echo $color ?>" class="categ_name <?php echo $item->slug ?>">
+									<?php echo $item->name ?>
+								</div>
+							<?php endforeach; endif; ?>
+							
 							<a href="<?php echo get_permalink() ?>" class="link">Saber más</a>
 
 							<div class="content">

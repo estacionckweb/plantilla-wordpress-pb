@@ -15,7 +15,6 @@ section.archive {
         position: relative;
         flex-wrap: wrap;
         margin-bottom: 10px;
-        border-bottom: 1px dashed #999;
 
         .title {
             .categ {
@@ -94,6 +93,7 @@ section.archive {
             &:after {
                 display: none;
             }
+            display: none;
         }
 
         @media all and (max-width: 900px) {

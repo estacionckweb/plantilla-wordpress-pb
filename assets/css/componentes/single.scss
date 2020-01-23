@@ -1,15 +1,27 @@
 article.single {
-    display: flex;
     width: 100%;
 
     .left {
-        width: 50%;
+        width: 100%;
         transition: all 0.5s ease;
+        padding-top: 2.5em;
+        overflow: hidden;
+        position: relative;
+
+        .inside {
+            outline: none;
+        }
 
         .img {
             margin-bottom: 20px;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            height: 70vh;
+            background-size: contain;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
 
             .size {
                 position: absolute;
@@ -65,14 +77,33 @@ article.single {
         }
     }
 
+    &.block {
+        display: flex;
+        .left, .right {
+            width: 50%;
+        }
+    }
+
     .right {
         width: 50%;
         color: white;
         padding-left: 20px;
-        padding-right: 20px;
+        margin: 0 auto;
+        // padding-right: 20px;
 
         h1 {
             font-size: 3em;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px;
+            font-family: 'Inconsolata', monospace;
+            font-size: 1.25em;
+
+            &:hover {
+                text-decoration: line-through;
+            }
         }
 
         .categ_name {
@@ -165,10 +196,9 @@ article.single {
 #franjaTexto {
     margin: 5px;
     height: 30px;
-    background: #000;
     overflow: hidden;
     position: relative;
-    border: 1px solid white;
+    border: 1px solid #444;
 
     p {
         color: white;
@@ -179,3 +209,104 @@ article.single {
         font-family: 'Inconsolata', monospace;
     }
 }
+
+
+section.frontStar {
+    background: #111;
+    height: 280px;
+    margin-top: calc(10vh + 4.5em);
+    position: relative;
+
+    
+}
+
+.navBlock {
+    .itemNav {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: #171717;
+        top: 50%;
+        transform: translate(0, -50%);
+        font-family: 'icons';
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+        color: white;
+
+        &.next {
+            right: 0;
+
+            &::before {
+                content: '\E802';
+                width: 100%;
+            }
+        }
+
+        &.prev {
+            &::before {
+                content: '\E803';
+                width: 100%;
+            }
+        }
+
+        &:hover {
+            background: white;
+            color: #171717;
+        }
+    }
+}
+.frontStar .inside {
+    overflow: hidden;
+    outline: none;
+  }
+  
+  .frontStar .img {
+    height: 280px;
+        background-size: cover;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .title {
+            background: rgba(23, 23, 23, 0.8);
+            font-size: 1.4em;
+            max-width: 80%;
+            text-align: center;
+            padding: 15px;
+            color: white;
+            transition: all 0.25s ease;
+
+            &:hover {
+                color: #171717;
+                background: white;
+            }
+            /* border: 1px solid #171717; */
+        }
+  }
+  
+  .flickity-button {
+    display: none;
+  }
+  
+  .flickity-page-dots {
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      padding: 0;
+  }
+  
+  .flickity-page-dots .dot {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    margin: 2px;
+    cursor: pointer;
+    background: #333;
+  }
+  
+  .flickity-page-dots .dot.is-selected {
+    background: white;
+  }

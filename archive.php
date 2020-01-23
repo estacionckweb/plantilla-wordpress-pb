@@ -10,10 +10,13 @@
 			));
 			// print_r($terms);
 		?>
+		<form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
+            <input class="search-input" type="search" name="s" placeholder="<?php _e( 'Search', 'plataforma' ); ?>">
+            <button class="search-submit" type="submit" role="button"><?php _e( 'Search', 'plataforma' ); ?></button>
+        </form>
 
 			<div class="external_nav btm_margin">
-				<div class="link related">Archivo: <?php echo get_archive_post_type() ?></div>
-				<a class="link">Ir al calendario</a>
+				<a class="link related" href="<?php echo get_blogInfo('url') ?>/?post_type=agenda">Ver todo el archivo</a>
 				<?php foreach($terms as $term): ?>
 					<a href="<?php echo get_blogInfo('url')?>/?rest_route=/wp/v2/agenda&tipos_agenda=<?php echo $term->term_id ?>&per_page=20" class="link categ <?php echo $term->slug; ?>" data-slug="<?php echo $term->slug; ?>">
 						<?php echo $term->name ?>

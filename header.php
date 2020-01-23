@@ -21,6 +21,16 @@
 
 		<?php if(!is_front_page()): ?>
 		<div id="top_nav">
+			<div class="btnMenu">
+				<div class="linea"></div>
+				<div class="linea"></div>
+				<div class="linea"></div>
+			</div>
+
+			<div class="sideMenu">
+				<?php get_sidebar() ?>
+			</div>
+
 			<a href="<?php echo get_blogInfo('url') ?>" class="logo"></a>
 		</div>
 		<?php endif; ?>

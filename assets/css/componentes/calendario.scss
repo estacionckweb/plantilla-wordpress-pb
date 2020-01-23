@@ -10,7 +10,7 @@
 
         .item {
             color: white;
-            font-size: 1.5em;
+            font-size: 1.2em;
             min-height: 50px;
             border-top: 1px dashed #333;
             margin-bottom: 2.5px;
@@ -40,7 +40,6 @@
 
                     .txt {
                         margin-left: 10px;
-                        max-width: 350px;
                         width: calc(100% - 100px);
                     }
                 }
@@ -145,7 +144,7 @@
         }
 
         .item {
-            border: 1px solid white;
+            border: 1px solid #444;
             padding: 0.5em;
             display: flex;
             align-items: center;
@@ -224,6 +223,7 @@
     }
 
     &.front {
+        flex-wrap: wrap;
         #calendario {
             width: 100%;
 
@@ -231,6 +231,10 @@
                 grid-template-rows: repeat(2, 50px) repeat(5, 50px);
                 font-size: 1em;
             }
+        }
+
+        .listado {
+            width: 100%;
         }
     }
 
