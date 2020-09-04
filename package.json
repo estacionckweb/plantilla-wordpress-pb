@@ -7,7 +7,7 @@
   "author": "Néstor Andrés <nestor2509@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.11.0"
   },
   "scripts": {
